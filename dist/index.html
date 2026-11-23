@@ -1,0 +1,1074 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081a2c">
+  <meta name="description" content="Водные лыжи, вейкборд, вейксерф и WakeSkim. Найдите площадку, узнайте расписание и запишитесь на первое занятие.">
+  <meta property="og:title" content="ФВЛС Москвы · Воднолыжный спорт">
+  <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/mark.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+  <title>ФВЛС Москвы · Воднолыжный спорт</title>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="ФВЛС Москвы, в начало страницы">
+        <img src="assets/mark.png" alt="" width="42" height="42">
+        <span>ФВЛС <strong>Москвы</strong></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню" data-menu-toggle hidden>
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#venues">Где заниматься</a>
+        <a href="#calendar">Календарь</a>
+        <a href="#news">Новости</a>
+        <a href="#contacts">Контакты</a>
+        <a class="button button-primary mobile-book" href="#trial" data-trial>На пробное занятие</a>
+      </nav>
+      <a class="button header-book" href="#trial" data-trial>На пробное занятие</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-feature">
+        <picture class="hero-picture">
+          <source media="(max-width: 640px)" srcset="assets/slalom-mobile.webp">
+          <img src="assets/slalom-hero.webp" alt="" width="1600" height="900" fetchpriority="high">
+        </picture>
+        <div class="container hero-inner">
+          <p class="eyebrow hero-eyebrow">Федерация воднолыжного спорта города Москвы</p>
+          <h1 id="hero-title">Воднолыжный<br><span>спорт в Москве</span></h1>
+          <p class="hero-intro">Найдите секцию, проверьте расписание и запишитесь на первое занятие по водным лыжам, вейкборду, вейксерфу или WakeSkim.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#venues">Найти секцию</a>
+            <a class="button button-primary" href="#trial" data-trial>На пробное занятие</a>
+            <a class="button button-primary" href="#disciplines">Дисциплины ФВЛС Москва</a>
+          </div>
+        </div>
+      </div>
+      <section class="discipline-band" id="disciplines" aria-labelledby="disciplines-title">
+        <div class="container">
+          <div class="discipline-title-row">
+            <h2 class="discipline-heading" id="disciplines-title">Дисциплины ФВЛС Москва</h2>
+            <a class="text-link" href="#athlete-path">Путь спортсмена</a>
+          </div>
+          <ul class="discipline-grid" role="list">
+            <li>
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/waterskiing/">
+                <img class="discipline-icon" src="assets/disciplines/waterski.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Водные лыжи</strong>
+                  <span>Слалом, фигуры, прыжки, многоборье</span>
+                </span>
+              </a>
+              <a class="discipline-document" href="assets/documents/rules-808.pdf#page=45" aria-label="Правила водных лыж на русском языке, PDF" title="Правила водных лыж · PDF"><span class="sr-only">Правила</span></a>
+            </li>
+            <li>
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/cable-ski/">
+                <img class="discipline-icon" src="assets/disciplines/cable-ski.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Водные лыжи на электротяге</strong>
+                  <span>Слалом, фигуры, прыжки</span>
+                  <span>Бассейн</span>
+                </span>
+              </a>
+              <a class="discipline-document" href="school.html#rules-cable-ski" aria-label="Правила водных лыж на электротяге на русском языке" title="Правила водных лыж на электротяге"><span class="sr-only">Правила</span></a>
+            </li>
+            <li>
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/wakeboard/">
+                <img class="discipline-icon" src="assets/disciplines/boat-wakeboard.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Вейкборд за катером</strong>
+                </span>
+              </a>
+              <a class="discipline-document" href="assets/documents/rules-808.pdf#page=83" aria-label="Правила вейкборда за катером на русском языке, PDF" title="Правила вейкборда за катером · PDF"><span class="sr-only">Правила</span></a>
+            </li>
+            <li>
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/cable-wakeboard/">
+                <img class="discipline-icon" src="assets/disciplines/cable-wakeboard.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Вейкборд на электротяге</strong>
+                  <span>Включая вейкскейт</span>
+                  <span>Бассейн</span>
+                </span>
+              </a>
+              <a class="discipline-document" href="school.html#rules-cable-wakeboard" aria-label="Правила вейкборда на электротяге и вейкскейта на русском языке" title="Правила вейкборда на электротяге и вейкскейта"><span class="sr-only">Правила</span></a>
+            </li>
+            <li class="discipline-wide">
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/wake-surf/">
+                <img class="discipline-icon" src="assets/disciplines/wakesurf-wakeskim.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <span><strong lang="en">Wakesurf</strong> (доска длинная)</span>
+                  <span><strong lang="en">Wakeskim</strong> (доска короткая)</span>
+                </span>
+              </a>
+              <a class="discipline-document" href="assets/documents/rules-808.pdf#page=83" aria-label="Правила Wakesurf и Wakeskim на русском языке, PDF" title="Правила Wakesurf и Wakeskim · PDF"><span class="sr-only">Правила</span></a>
+            </li>
+            <li class="discipline-adaptive discipline-wide">
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/disabled-skiing/">
+                <img class="discipline-icon" src="assets/disciplines/adaptive.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Адаптивные воднолыжные дисциплины</strong>
+                  <span>Водные лыжи (слалом, фигурное катание, трамплин)</span>
+                  <span>Вейкборд на электротяге (сидячий вейкборд)</span>
+                  <span>Вейксерф (<span lang="en">Wakesurf</span>)</span>
+                </span>
+              </a>
+              <a class="discipline-document" href="school.html#rules-adaptive" aria-label="Правила адаптивных воднолыжных дисциплин на русском языке" title="Правила адаптивных дисциплин"><span class="sr-only">Правила</span></a>
+            </li>
+            <li class="discipline-wide">
+              <a class="discipline-card" href="https://iwwf.sport/disciplines/show-ski/">
+                <img class="discipline-icon" src="assets/disciplines/show-ski.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                <span class="discipline-copy">
+                  <strong>Воднолыжное шоу</strong>
+                </span>
+              </a>
+              <a class="discipline-document" href="school.html#rules-show-ski" aria-label="Правила воднолыжного шоу на русском языке" title="Правила воднолыжного шоу"><span class="sr-only">Правила</span></a>
+            </li>
+          </ul>
+          <div class="discipline-extras">
+            <h3>Дополнительные направления</h3>
+            <ul class="discipline-extra-grid" role="list">
+              <li>
+                <a class="discipline-card discipline-card--extra" href="#loaded" aria-label="Вейк-лонгборд на площадке LOADED">
+                  <img class="discipline-icon" src="assets/disciplines/longboard.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                  <strong>Вейк-лонгборд</strong>
+                </a>
+                <a class="discipline-document" href="school.html#rules-longboard" aria-label="Регламент вейк-лонгборда на русском языке" title="Регламент вейк-лонгборда"><span class="sr-only">Правила</span></a>
+              </li>
+              <li>
+                <a class="discipline-card discipline-card--extra" href="#loaded" aria-label="Вейк-фойл на площадке LOADED">
+                  <img class="discipline-icon" src="assets/disciplines/foil.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                  <strong>Вейк-фойл</strong>
+                </a>
+                <a class="discipline-document" href="school.html#rules-foil" aria-label="Регламент вейк-фойла на русском языке" title="Регламент вейк-фойла"><span class="sr-only">Правила</span></a>
+              </li>
+            </ul>
+          </div>
+
+          <section class="athlete-path" id="athlete-path" aria-labelledby="athlete-path-title">
+            <div class="athlete-path-heading">
+              <img src="assets/athlete-path/waterski.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+              <h3 id="athlete-path-title">Путь спортсмена</h3>
+              <div class="athlete-jumps">
+                <a class="text-link" href="#athlete-benefits">Что дают разряды и награды</a>
+                <a class="text-link" href="#athlete-commercial">Коммерческий путь</a>
+              </div>
+            </div>
+
+            <div class="athlete-tree">
+              <div class="athlete-branch">
+                <h4 class="athlete-branch-title">
+                  <img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                  Разряды и звания
+                </h4>
+                <div class="athlete-rank-group">
+                  <h5>Юношеские разряды</h5>
+                  <p>В дисциплине «катер — прыжки с трамплина» измеряют дальность прыжка в метрах. Разряды можно выполнить с 9 лет на официальных соревнованиях любого статуса.</p>
+                  <ul class="athlete-rank-list" role="list">
+                    <li><img src="assets/athlete-path/target.png" alt="" width="32" height="32" loading="lazy"><div><strong>II юношеский</strong><p>Дальность прыжка от 13 м по мужскому нормативу, от 11 м по женскому.</p></div></li>
+                    <li><img src="assets/athlete-path/target.png" alt="" width="32" height="32" loading="lazy"><div><strong>I юношеский</strong><p>Дальность прыжка от 16 м по мужскому нормативу, от 13 м по женскому.</p></div></li>
+                  </ul>
+                  <a class="text-link athlete-path-link" href="assets/documents/evsk-waterski-299.pdf#page=9">Таблица нормативов ЕВСК · PDF</a>
+                </div>
+                <div class="athlete-rank-group">
+                  <h5>Спортивные разряды и звания</h5>
+                  <p>Примеры по занятым местам для мужчин и женщин в вейкборде за катером и на электротяге, Wakesurf и Wakeskim. В слаломе, прыжках и фигурном катании применяются свои нормы по буям, метрам или очкам.</p>
+                  <ul class="athlete-rank-list" role="list">
+                    <li><img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy"><div><strong>III разряд · 4–6-е места</strong><p>Чемпионат муниципального образования</p></div></li>
+                    <li><img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy"><div><strong>II разряд · 1–3-е места</strong><p>Чемпионат муниципального образования</p></div></li>
+                    <li><img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy"><div><strong>I разряд · 1–5-е места</strong><p>Чемпионат субъекта РФ</p></div></li>
+                    <li><img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy"><div><strong>КМС · 1–3-е места</strong><p>Другие межрегиональные соревнования, включённые в ЕКП</p></div></li>
+                    <li>
+                      <img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy">
+                      <div>
+                        <strong>МС · с 13 лет</strong>
+                        <p><b>Кубок России.</b> 1-е место среди мужчин или женщин. При двух и более этапах учитывается финал.</p>
+                        <p><b>Чемпионат России.</b> Среди мужчин и женщин — 1-е место или 2-е место дважды в течение трёх лет. В мужском зачёте ПОДА на электротяге нужно выиграть чемпионат России два года подряд или Кубок России два года подряд.</p>
+                        <p><b>Пример для водных лыж.</b> В прыжках за катером норматив на МС составляет 46 м по мужскому нормативу и 37 м по женскому. Статус соревнований — не ниже Кубка России.</p>
+                        <a class="text-link athlete-path-link" href="assets/documents/evsk-waterski-299.pdf#page=4">Кубок и чемпионат России в ЕВСК · PDF</a>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy">
+                      <div>
+                        <strong>МСМК · с 15 лет</strong>
+                        <p><b>Чемпионат мира.</b> 1–4-е места среди мужчин и женщин в четырёх дисциплинах выше. В мужском ПОДА-вейкборде на электротяге — 1–2-е места.</p>
+                        <p><b>Чемпионат Европы.</b> 1–3-е места среди мужчин и женщин в вейкборде за катером и на электротяге. В мужском ПОДА-вейкборде на электротяге — 1-е место.</p>
+                        <a class="text-link athlete-path-link" href="assets/documents/evsk-waterski-299.pdf#page=2">Чемпионат Европы в ЕВСК · PDF</a>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="assets/athlete-path/podium.png" alt="" width="32" height="32" loading="lazy">
+                      <div>
+                        <strong>Первенство Европы · 1–4-е места</strong>
+                        <p>В вейкборде за катером и на электротяге, Wakesurf и Wakeskim эти места дают возможность выполнить требование на МС юниорам и юниоркам до 19 лет, а на КМС — юношам и девушкам до 15 лет. Минимальный возраст для МС — 13 лет, для КМС — 11 лет.</p>
+                        <a class="text-link athlete-path-link" href="assets/documents/evsk-waterski-299.pdf#page=3">Первенство Европы в ЕВСК · PDF</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <p class="athlete-rank-note">Возраст, дисциплина и условия выполнения проверяются по полной таблице ЕВСК. ЕКП — Единый календарный план Минспорта.</p>
+                <a class="text-link athlete-path-link" href="#athlete-steps">Что сделать для присвоения</a>
+
+                <div class="athlete-path-aside">
+                  <h5>Почётные звания и награды</h5>
+                  <ul class="athlete-path-examples" role="list">
+                    <li>
+                      <strong>Заслуженный мастер спорта России (ЗМС)</strong>
+                      <p>Почётное спортивное звание</p>
+                    </li>
+                    <li>
+                      <strong>Почётный мастер спорта России</strong>
+                      <p>Почётное спортивное звание</p>
+                    </li>
+                    <li>
+                      <strong>Медаль Николая Озерова</strong>
+                      <p>Ведомственная награда Минспорта</p>
+                    </li>
+                    <li>
+                      <strong>Орден Почёта</strong>
+                      <p>Государственная награда. Среди оснований — особые заслуги в развитии спорта.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="athlete-branch">
+                <h4 class="athlete-branch-title">
+                  <img src="assets/athlete-path/flag.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                  Соревнования и отбор
+                </h4>
+                <ol class="athlete-stages" role="list" aria-label="Уровни соревнований">
+                  <li>
+                    <strong>Район и город</strong>
+                    <p>Местные старты по календарю.</p>
+                  </li>
+                  <li>
+                    <strong>Регион (субъект РФ)</strong>
+                    <p>Областные и другие региональные старты. Для Москвы этот уровень включает чемпионат и первенство города.</p>
+                  </li>
+                  <li>
+                    <strong>Межрегиональные старты</strong>
+                    <p>Федеральный округ и другие форматы, если они есть в календаре.</p>
+                  </li>
+                  <li>
+                    <strong>Всероссийские старты</strong>
+                    <p>Чемпионат, первенство и Кубок России.</p>
+                  </li>
+                  <li>
+                    <strong>Международные старты IWWF</strong>
+                    <p>Чемпионаты Европы и Азии. Чемпионат и возрастные первенства мира.</p>
+                  </li>
+                </ol>
+                <p class="athlete-path-note"><strong>Отбор.</strong> Допуск определяет регламент старта. Результаты официальных соревнований учитывают при отборе в сборную России.</p>
+
+                <div class="athlete-path-aside">
+                  <h5>Мультиспортивные игры</h5>
+                  <ul class="athlete-path-examples" role="list">
+                    <li>
+                      <strong>Игры БРИКС и спартакиады</strong>
+                      <p>Участие возможно при включении дисциплины в программу конкретных Игр.</p>
+                    </li>
+                    <li>
+                      <strong>Всемирные игры</strong>
+                      <p>В программе представлены водные лыжи и вейкборд.</p>
+                    </li>
+                    <li>
+                      <strong>Олимпиада</strong>
+                      <p>Воднолыжный спорт вне программы Лос-Анджелеса-2028.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="athlete-branch">
+                <h4 class="athlete-branch-title">
+                  <img src="assets/athlete-path/protocol.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                  Коммерческий путь
+                </h4>
+                <ol class="athlete-stages" role="list" aria-label="Работа со спонсорами">
+                  <li><strong>Что нужно спонсору</strong><p>Доступ к подходящей аудитории, контент с экипировкой, участие в событиях и отчёт по охвату или заявкам.</p></li>
+                  <li><strong>Что получает спортсмен</strong><p>Гонорар, экипировку, время тренировок или оплату поездок. Для бартера согласуйте стоимость поддержки, объём контента, сроки и права на публикацию.</p></li>
+                  <li><strong>Бонус за место или разряд</strong><p>Пропишите уровень турнира и сумму за каждое место. Для бонуса за разряд укажите нужную квалификацию и подтверждение приказом о присвоении.</p></li>
+                  <li><strong>Спортивная зарплата</strong><p>Оклад и премии спортсмена определяют трудовой договор и система оплаты работодателя. Условия повышения за результат или новый разряд фиксируются там же. <a class="text-link" href="#athlete-salary">Коэффициенты Москомспорта</a></p></li>
+                </ol>
+                <a class="text-link athlete-path-link" href="#athlete-commercial">Пример расчёта спонсорских выплат</a>
+              </div>
+            </div>
+
+            <section class="athlete-howto" id="athlete-steps" aria-labelledby="athlete-steps-title">
+              <h4 id="athlete-steps-title">Что сделать спортсмену</h4>
+              <ol class="athlete-howto-grid" role="list">
+                <li class="athlete-goal-step">
+                  <img src="assets/athlete-path/target.png" alt="" width="44" height="44" loading="lazy">
+                  <strong>1. Выбрать цель</strong>
+                  <p>Откройте строку своей дисциплины в ЕВСК и вместе с тренером сверьте возраст, разряд и условия старта. Ссылки открывают приложение 13 к приказу Минспорта № 299 в PDF.</p>
+                  <div class="athlete-evsk-links">
+                    <div>
+                      <h5>Водные лыжи за катером</h5>
+                      <ul role="list">
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=9&amp;view=FitH,272" target="_blank" rel="noopener">Слалом за катером</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=9&amp;view=FitH,356" target="_blank" rel="noopener">Прыжки с трамплина за катером</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=9&amp;view=FitH,415" target="_blank" rel="noopener">Фигурное катание за катером</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=9&amp;view=FitH,492" target="_blank" rel="noopener">Многоборье за катером</a></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5>Электротяга и бассейн</h5>
+                      <ul role="list">
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,74" target="_blank" rel="noopener">Слалом на электротяге</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,162" target="_blank" rel="noopener">Прыжки с трамплина на электротяге</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,231" target="_blank" rel="noopener">Фигурное катание на электротяге</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,300" target="_blank" rel="noopener">Многоборье на электротяге</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,480" target="_blank" rel="noopener">Фигурное катание в бассейне</a></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5>Вейк-дисциплины</h5>
+                      <p>Строки чемпионата субъекта РФ.</p>
+                      <ul role="list">
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд за катером</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд на электротяге</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakesurf (доска длинная)</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakeskim (доска короткая)</a></li>
+                        <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,187" target="_blank" rel="noopener">ПОДА — вейкборд на электротяге</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p>Таблицы требований для вейк-дисциплин по статусу старта и возрасту</p>
+                  <ul class="athlete-evsk-tables" role="list">
+                    <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=6" target="_blank" rel="noopener">I–III разряды</a></li>
+                    <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=3" target="_blank" rel="noopener">МС и КМС</a></li>
+                    <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=1" target="_blank" rel="noopener">МСМК</a></li>
+                  </ul>
+                </li>
+                <li><img src="assets/athlete-path/flag.png" alt="" width="44" height="44" loading="lazy"><strong>2. Заявиться на старт</strong><p>Проверьте официальный статус турнира, условия допуска и срок заявки у организатора.</p></li>
+                <li><img src="assets/athlete-path/protocol.png" alt="" width="44" height="44" loading="lazy"><strong>3. Получить протокол</strong><p>Выполните норматив или требование по месту. Проверьте результат и документы о составе судейской коллегии.</p></li>
+                <li>
+                  <img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy">
+                  <strong>4. Оформить разряд</strong>
+                  <p>Заполните представление вместе с тренером или федерацией. Срок подачи — четыре месяца с даты выполнения нормы или требования.</p>
+                  <a class="text-link athlete-rank-download" href="assets/documents/sport-rank-submission-template.docx" download="Представление-на-спортивный-разряд.docx">Скачать шаблон представления · DOCX</a>
+                </li>
+              </ol>
+              <p class="athlete-rank-note">МС и МСМК оформляются по процедуре присвоения спортивных званий. Перечень документов и кто подаёт представление указаны в Положении о ЕВСК.</p>
+              <a class="text-link athlete-path-link" href="school.html#documents">Скачать ЕВСК и правила</a>
+            </section>
+
+            <section class="athlete-howto" id="athlete-benefits" aria-labelledby="athlete-benefits-title">
+              <h4 id="athlete-benefits-title">Что дают разряды, звания и награды</h4>
+              <p class="athlete-rank-note">За само присвоение спортивного разряда или звания федеральная прибавка к пенсии и окладу не установлена. Оклад, надбавки и премии зависят от трудового договора и системы оплаты работодателя. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_34683/ec0a7a4cf2bbf1f8f89970fd480c3fc9ed860f82/">ТК РФ, статья 135</a> · <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_34683/a27df91d3d21563ac36eb0a03576f1d59f9b639d/">Статья 348.2</a></p>
+              <div class="athlete-benefit-grid">
+                <div>
+                  <h5>Разряды, звания и сборная</h5>
+                  <dl class="athlete-benefit-list">
+                    <div>
+                      <dt>II и I юношеские</dt>
+                      <dd>Спортивная организация оформляет разряд приказом о присвоении. Разряд можно указать в заявке на старт, если его требует положение. <a class="text-link" href="https://www.minsport.gov.ru/activity/government-regulation/evsk/">Положение о ЕВСК</a></dd>
+                    </div>
+                    <div>
+                      <dt>III, II и I спортивные</dt>
+                      <dd>Разряд присваивается на два года и учитывается при допуске, когда организатор установил порог квалификации. Оплату за квалификацию может предусмотреть работодатель. <a class="text-link" href="https://www.minsport.gov.ru/activity/government-regulation/evsk/">Порядок присвоения и подтверждения</a></dd>
+                    </div>
+                    <div>
+                      <dt>Кандидат в мастера спорта (КМС)</dt>
+                      <dd>Разряд присваивается на три года. Возможную надбавку за квалификацию определяет система оплаты работодателя. <a class="text-link" href="https://www.minsport.gov.ru/activity/government-regulation/evsk/">Положение о ЕВСК</a></dd>
+                    </div>
+                    <div>
+                      <dt>Мастер спорта России (МС) и МСМК</dt>
+                      <dd>За каждое звание спортсмен получает <strong>удостоверение и нагрудный знак</strong>. В подведомственных Москомспорту учреждениях возможна стимулирующая выплата за спортивное звание по локальным правилам. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_73038/1360fb7fc3ba54b4560c3e087703c73bdba40479/">Статья 22 закона о спорте</a> · <a class="text-link" href="https://base.garant.ru/414210715/53f89421bbdaf741eb2d1ecc4ddb4c33/">Рекомендации № 124, пункт 2.10.5</a></dd>
+                    </div>
+                    <div>
+                      <dt>Отбор в сборную Москвы</dt>
+                      <dd>На официальных мероприятиях предусмотрены проезд, проживание, питание и экипировка в пределах бюджета. Ежемесячное вознаграждение выплачивается по условиям трудового договора, если он заключён. Поощрение за высокий результат зависит от оснований и порядка, установленных Москвой. <a class="text-link" href="assets/documents/moscow-team-146.pdf#page=2">Положение о сборных Москвы № 146, пункты 2.1.1 и 2.1.5–2.1.6</a></dd>
+                    </div>
+                  </dl>
+                </div>
+                <div>
+                  <h5>Признание заслуг и меры поддержки</h5>
+                  <dl class="athlete-benefit-list">
+                    <div>
+                      <dt>Заслуженный и Почётный мастер спорта России</dt>
+                      <dd>По каждому званию вручают <strong>удостоверение и нагрудный знак</strong>. Стимулирующая доплата возможна у работодателя по его положению об оплате труда. <a class="text-link" href="https://www.minsport.gov.ru/activity/government-regulation/pochetnye-sportivnye-zvaniya/">Минспорт · почётные спортивные звания</a></dd>
+                    </div>
+                    <div>
+                      <dt>Медаль Николая Озерова</dt>
+                      <dd>Минспорт вручает <strong>медаль и удостоверение</strong>. Приказ о медали устанавливает порядок награждения. Возможные выплаты за отраслевые награды регулирует положение об оплате труда работодателя. <a class="text-link" href="https://www.minsport.gov.ru/activity/government-regulation/vedomstvennye-nagrady/">Минспорт · приказ № 1025</a></dd>
+                    </div>
+                    <div>
+                      <dt>Орден Почёта</dt>
+                      <dd>Орден может служить основанием для звания «Ветеран труда» при страховом стаже, учитываемом для пенсии, от 25 лет у мужчин, от 20 лет у женщин или необходимой выслуге. При оформленном статусе и выполнении городских условий в Москве доступны бесплатный городской проезд, скидка 50% на жильё и коммунальные услуги и <strong>1 328 ₽ в месяц в 2026 году</strong> для получателей выплаты по пункту 4.2.4. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_5490/77214a9657d36dfc647fdcb3cc35a1eae426945d/">Закон «О ветеранах», статья 7</a> · <a class="text-link" href="https://base.garant.ru/382231/">Закон Москвы № 70, статья 6</a> · <a class="text-link" href="https://base.garant.ru/413275407/53f89421bbdaf741eb2d1ecc4ddb4c33/">Постановление № 3025-ПП</a></dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              <div class="athlete-competition-awards" id="athlete-salary">
+                <h5>Прибавка к окладу за результат</h5>
+                <p>Москомспорт рекомендует коэффициенты к минимальному должностному окладу для сотрудников на должностях «спортсмен» и «спортсмен-инструктор» в подведомственных учреждениях. Примеры ниже относятся к индивидуальным дисциплинам.</p>
+                <ul class="athlete-path-examples" role="list">
+                  <li><strong>До 20%</strong> за 1–3-е места первенства России среди юношей и юниоров.</li>
+                  <li><strong>До 50%</strong> за 1-е место в Кубке России или 4–6-е места чемпионата России.</li>
+                  <li><strong>До 70%</strong> за 1–3-е места чемпионата России.</li>
+                  <li><strong>До 150%</strong> за 1–3-е места чемпионата Европы или 1–6-е места чемпионата мира.</li>
+                </ul>
+                <p>Размер устанавливает учреждение в своей системе оплаты. За звания и награды возможны отдельные стимулирующие выплаты по её условиям. <a class="text-link" href="https://base.garant.ru/414210715/53f89421bbdaf741eb2d1ecc4ddb4c33/">Москомспорт · распоряжение № 124 от 6 мая 2026 года, таблица 2 и пункт 2.10.5</a></p>
+              </div>
+              <div class="athlete-competition-awards" id="athlete-pension">
+                <h5>Когда возникает право на доплату к пенсии</h5>
+                <ul class="athlete-path-examples" role="list">
+                  <li><strong>Федеральная доплата за чемпионство.</strong> Чемпионам Олимпийских, Паралимпийских и Сурдлимпийских игр полагается дополнительное ежемесячное материальное обеспечение в размере <strong>250% установленной законом базовой социальной пенсии</strong>. Выплата производится при наличии пенсии и вне периода оплачиваемой работы. <a class="text-link" href="https://sfr.gov.ru/grazhdanam/socialnaya_podderzhka/federal_beneficiaries/dmo">Социальный фонд России · закон № 21-ФЗ</a></li>
+                  <li><strong>Компенсация Москвы.</strong> В 2026 году предусмотрено <strong>22 238 ₽ в месяц</strong> для чемпионов и призёров Олимпийских, Паралимпийских и Сурдлимпийских игр и <strong>20 015 ₽ в месяц</strong> для категорий чемпионов мира и Европы, перечисленных в городских актах. Для воднолыжных дисциплин право на выплату нужно проверять по критериям программы Игр, виду пенсии и статусу соревнования. <a class="text-link" href="https://moskva-pravo.ru/zakon/2009/07/15/n-27/">Закон Москвы № 27, статья 30</a> · <a class="text-link" href="https://base.garant.ru/390567/53f89421bbdaf741eb2d1ecc4ddb4c33/">Условия № 912-ПП</a> · <a class="text-link" href="https://base.garant.ru/413275407/53f89421bbdaf741eb2d1ecc4ddb4c33/">Размеры № 3025-ПП, пункты 4.3.1.11–4.3.1.12</a></li>
+                </ul>
+              </div>
+              <div class="athlete-competition-awards">
+                <h5>Что получают призёры соревнований</h5>
+                <ul class="athlete-path-examples" role="list">
+                  <li><strong>Чемпионат и первенство России 2026.</strong> Призёры в личных дисциплинах получают медали и дипломы Минспорта. Победителям чемпионата России также вручают нагрудный значок «Чемпион России», один раз на спортсмена. <a class="text-link" href="https://www.minsport.gov.ru/neolimpijskie-vidy-sporta-2026/vodnolyzhnyj-sport-2026/">Положение Минспорта на 2026 год</a></li>
+                  <li><strong>Денежные призы отдельных стартов.</strong> Для первого этапа Кубка России по вейкборду на электротяге в Дзержинском в августе 2024 года ФВЛС России объявила общий призовой фонд <strong>600 000&nbsp;₽</strong>. Выплаты и распределение призового фонда определяет положение конкретного старта. <a class="text-link" href="https://waterskifed.ru/posts/year/2024/2">Объявление ФВЛС России</a></li>
+                </ul>
+              </div>
+              <p class="athlete-rank-note"><strong>Баллы при поступлении.</strong> В училище олимпийского резерва Иркутска при поступлении на «Физическую культуру» в 2026/27 году к вступительным баллам добавляли 2 балла за действующий I разряд, 3 за КМС и 4 за МС или МСМК. ТУСУР в 2026 году начислял 4 конкурсных балла за КМС, МС или МСМК. <a class="text-link" href="https://www.irktfk.ru/images/Abitur/norm_doc/Pravila-priema_26_FK_bez-lista-sogl.pdf">Правила училища</a> · <a class="text-link" href="https://tusur.ru/sveden/files/eis/Pravila_priema_2026.pdf">Правила ТУСУР</a></p>
+            </section>
+
+            <section class="athlete-howto" id="athlete-commercial" aria-labelledby="athlete-commercial-title">
+              <h4 id="athlete-commercial-title">Коммерческий путь спортсмена</h4>
+              <div class="athlete-map">
+                <div class="athlete-map-root">
+                  <img src="assets/athlete-path/waterski.png" alt="" width="40" height="40" loading="lazy">
+                  <strong>Спортсмен</strong>
+                </div>
+                <ul class="athlete-map-branches" role="list">
+                  <li>
+                    <div class="athlete-map-node">
+                      <img src="assets/athlete-path/flag.png" alt="" width="32" height="32" loading="lazy">
+                      <h5>Личный бренд</h5>
+                    </div>
+                    <ul class="athlete-map-leaves" role="list">
+                      <li>Дисциплина, результаты, стиль и ценности</li>
+                      <li>Портфолио с фото, видео и контактами</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="athlete-map-node">
+                      <img src="assets/athlete-path/target.png" alt="" width="32" height="32" loading="lazy">
+                      <h5>Контент и метрики</h5>
+                    </div>
+                    <ul class="athlete-map-leaves" role="list">
+                      <li>Тренировки, старты и разборы</li>
+                      <li>Охват, подписки, лайки и репосты</li>
+                      <li><strong>CTA</strong> — призыв к действию. Считайте переходы, заявки и покупки.</li>
+                      <li><strong>CPA</strong> — стоимость действия. <strong>ROI</strong> — окупаемость вложений.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="athlete-map-node">
+                      <img src="assets/athlete-path/protocol.png" alt="" width="32" height="32" loading="lazy">
+                      <h5>Работа с партнёрами</h5>
+                    </div>
+                    <ul class="athlete-map-leaves" role="list">
+                      <li>Спецпроекты — ролики, тесты экипировки и мастер-классы</li>
+                      <li>Бонус за место с учётом уровня турнира</li>
+                      <li>Оплата за согласованный результат кампании</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="athlete-sponsor">
+                <div class="athlete-sponsor-copy">
+                  <h5>Цель ФВЛС Москвы на 2027 год</h5>
+                  <p>Будем стремиться выстроить систему спонсорской поддержки с бонусами за спортивные результаты и оплатой спецпроектов.</p>
+                  <p>Суммы условные. Размер бонуса, турниры, призовые места и оплату спецпроектов стороны определяют в договоре.</p>
+                  <p class="athlete-sponsor-example"><strong>Пример.</strong> Второе место на чемпионате России — 18 000&nbsp;₽. Выполненный спецпроект — 15 000&nbsp;₽. Вместе — 33 000&nbsp;₽. С разовым бонусом 5 000&nbsp;₽ за КМС, если он указан в договоре, выплата составит 38 000&nbsp;₽. Спортивный оклад рассчитывается по трудовому договору.</p>
+                </div>
+                <table class="athlete-sponsor-table">
+                  <caption>Условный пример бонусов, ₽</caption>
+                  <thead><tr><th scope="col">Уровень старта</th><th scope="col">1-е</th><th scope="col">2-е</th><th scope="col">3-е</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Местный</th><td>10 000</td><td>6 000</td><td>3 000</td></tr>
+                    <tr><th scope="row">Региональный</th><td>15 000</td><td>9 000</td><td>4 500</td></tr>
+                    <tr><th scope="row">Межрегиональный</th><td>20 000</td><td>12 000</td><td>6 000</td></tr>
+                    <tr><th scope="row">Чемпионат, Кубок или первенство России</th><td>30 000</td><td>18 000</td><td>9 000</td></tr>
+                    <tr><th scope="row">Чемпионат Европы или Азии</th><td>40 000</td><td>24 000</td><td>12 000</td></tr>
+                    <tr><th scope="row">Чемпионат или первенство мира</th><td>60 000</td><td>36 000</td><td>18 000</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="athlete-rank-note athlete-platform-status">Платформа спонсорской и иной поддержки ФВЛС Москвы находится в разработке.</p>
+            </section>
+
+            <details class="athlete-path-sources">
+              <summary>Условия и официальные источники</summary>
+              <div class="athlete-path-references">
+                <div>
+                  <h4>Квалификация и награды</h4>
+                  <p>КМС — кандидат в мастера спорта. МС — мастер спорта России. МСМК — мастер спорта России международного класса.</p>
+                  <ul>
+                    <li><a href="https://publication.pravo.gov.ru/document/0001202606080012">Приказ Минспорта № 299 · ЕВСК по воднолыжному спорту, приложение № 13</a></li>
+                    <li><a href="https://www.minsport.gov.ru/activity/government-regulation/evsk/">Положение о ЕВСК и документы Минспорта</a></li>
+                    <li>Почётные спортивные звания · <a href="https://storage.minsport.gov.ru/cms-uploads/cms/prikaz_856_ot_24_10_2022_1c3fd0534d.pdf">приказ Минспорта № 856</a>, <a href="https://www.consultant.ru/document/cons_doc_LAW_432889/">действующая редакция</a></li>
+                    <li><a href="https://www.minsport.gov.ru/activity/government-regulation/vedomstvennye-nagrady/">Ведомственные награды Минспорта</a></li>
+                    <li><a href="https://minjust.gov.ru/ru/documents/7992/">Государственные награды · указ Президента № 1099</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Уровни стартов и отбор</h4>
+                  <p>Для допуска на чемпионат России 2026 года по слалому, фигурному катанию и прыжкам нужны заявка сборной субъекта и результат по нормам допуска на официальном старте уровня субъекта или выше. ФВЛС формирует сборную России из списка кандидатов.</p>
+                  <ul>
+                    <li><a href="https://waterski.mossport.ru/#events">Москомспорт · старты в Москве</a></li>
+                    <li>Минспорт · <a href="https://storage.minsport.gov.ru/cms-uploads/cms/Vodnolyzhnyj_sport_d31946d1f6.pdf#page=8">положение о стартах 2026 года</a>, <a href="https://www.minsport.gov.ru/neolimpijskie-vidy-sporta-2026/vodnolyzhnyj-sport-2026/">изменения к положению</a></li>
+                    <li><a href="https://waterskifed.ru/doc_5">ФВЛС России · правила и документы по отбору в сборную</a></li>
+                    <li><a href="https://waterskifed.ru/juri">ФВЛС России · коллегия спортивных судей</a></li>
+                    <li>IWWF · <a href="https://ems.iwwf.sport/Competitions/Details?Id=65314d15-25cc-4406-9a6b-479e528eb22c">Европа</a>, <a href="https://iwwf.asia/event/iwwfasianchamps2025/">Азия</a>, <a href="https://ems.iwwf.sport/Competitions/Details/b4b2d3a5-6fb6-4ad1-9579-ad760b660aca">чемпионат мира</a>, <a href="https://ems.iwwf.sport/Competitions/Details?Id=9ba15c3c-c348-4314-b552-9893d0dfa5d8">первенство мира U17</a></li>
+                    <li><a href="https://minsport.gov.ru/press-center/news/zavershilis-sportivnye-igry-stran-briks/">Игры БРИКС · Минспорт</a></li>
+                    <li><a href="https://storage.minsport.gov.ru/cms-uploads/cms/IZMENENIE_v_Polozhenie_Spartakiady_2_bb7d8cebfb.pdf">Спартакиада народов России · программа 2026</a></li>
+                    <li><a href="https://www.theworldgames.org/sports/Waterski-Wakeboard-37">Всемирные игры · водные лыжи и вейкборд</a></li>
+                    <li><a href="https://la28.org/en/games-plan/olympics.html">Олимпийские игры · официальный список видов спорта LA28</a></li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <section class="section section-catalog" id="venues" aria-labelledby="venues-title">
+      <div class="container">
+        <div class="section-heading catalog-heading">
+          <h2 id="venues-title" tabindex="-1">Где заниматься</h2>
+          <a class="text-link" href="#other-spots">Карта и другие площадки</a>
+        </div>
+
+        <section class="school-locations" id="school-locations" aria-labelledby="school-title">
+          <div class="school-heading">
+            <div>
+              <p class="school-label">Официальные локации ФВЛС Москвы</p>
+              <h3 id="school-title">Школа «ФВЛС Москвы»</h3>
+            </div>
+            <a class="button button-outline" href="school.html">Школа и обучение</a>
+          </div>
+
+          <section class="school-app-banner" aria-labelledby="school-app-title">
+            <div class="school-app-copy">
+              <div class="school-app-brand">
+                <img src="assets/mark.png" alt="" width="42" height="42" loading="lazy">
+                <h4 id="school-app-title">FVLSchool</h4>
+              </div>
+              <p>Тренер ведёт журнал занятий. Ученик видит свой прогресс к недельной цели.</p>
+              <div class="school-program-links">
+                <a class="button button-primary" href="school.html#tyaga">О платформе</a>
+                <button class="button button-ghost" type="button" disabled aria-describedby="school-app-download-status">Скачать приложение</button>
+              </div>
+              <p class="school-app-status" id="school-app-download-status">Скачивание будет доступно после публикации приложения.</p>
+            </div>
+            <figure class="school-app-figure">
+              <div class="school-app-scene">
+                <img class="school-app-image" src="assets/fvlschool-banner.webp" alt="Тренер и ученица смотрят свои записи на телефонах после занятия у воды" width="1440" height="960" loading="lazy" decoding="async">
+                <div class="school-app-previews">
+                  <div class="school-app-preview">
+                    <span class="school-app-role">Тренер</span>
+                    <strong>Журнал группы</strong>
+                    <span class="school-app-confirmed"><span aria-hidden="true">✓</span> 2 занятия подтверждены</span>
+                  </div>
+                  <div class="school-app-preview">
+                    <span class="school-app-role">Ученик</span>
+                    <strong>Цель на неделю</strong>
+                    <span>2 из 3 занятий</span>
+                    <progress value="2" max="3" aria-label="Прогресс к недельной цели">2 из 3</progress>
+                  </div>
+                </div>
+              </div>
+              <div class="school-app-device">
+                <div class="school-app-screen">
+                  <p class="school-app-screen-brand"><img src="assets/mark.png" alt="" width="20" height="20" loading="lazy">FVLSchool</p>
+                  <h5>История занятий</h5>
+                  <ul class="school-app-sessions" role="list">
+                    <li>
+                      <strong><time datetime="2026-11-20">20 ноября</time></strong>
+                      <span>Вейкборд</span>
+                      <span class="school-app-session-status">Подтверждено</span>
+                    </li>
+                    <li>
+                      <strong><time datetime="2026-11-18">18 ноября</time></strong>
+                      <span>Вейкборд</span>
+                      <span class="school-app-session-status">Подтверждено</span>
+                    </li>
+                  </ul>
+                </div>
+                <p class="school-app-screen-label">Пример экрана</p>
+              </div>
+              <figcaption class="sr-only">Пример прогресса и истории занятий в FVLSchool</figcaption>
+            </figure>
+          </section>
+
+          <div class="school-grid">
+            <details class="school-venue" name="school-venues" id="sportstation">
+              <summary>SportStation</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-type">Вейкборд</p>
+                <p class="venue-address">Москва, ул. Новоостаповская, 5, стр. 2</p>
+                <p class="school-venue-description">Крытый вейк-парк с занятиями для детей и взрослых.</p>
+                <button class="school-venue-action" type="button" disabled aria-label="Расписание и запись SportStation. Запись через сайт пока недоступна">Расписание и запись</button>
+              </div>
+            </details>
+
+            <details class="school-venue" name="school-venues" id="rgufk">
+              <summary>РГУФК</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-type">Бассейн</p>
+                <p class="venue-address">Москва, Сиреневый бульвар, 2, стр. 1А</p>
+                <p class="school-venue-description">Тренировки на лебёдке в бассейне РГУФК.</p>
+                <p class="school-venue-partners">ФВЛС &amp; LOADED &amp; MyWave &amp; РГУФК</p>
+                <a class="school-venue-action" href="school.html#tyaga" aria-label="FVLSchool для группы РГУФК">Перейти в FVLSchool</a>
+              </div>
+            </details>
+
+            <details class="school-venue" name="school-venues" id="strogino" data-venue data-school-venue data-trial-venue>
+              <summary data-venue-name>Строгино</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-type" data-venue-discipline>Вейкборд</p>
+                <p class="venue-address" data-venue-address>Москва, ул. Исаковского, 37, корп. 2, стр. 1</p>
+                <p class="school-venue-description" data-venue-description>Строгино Wake Park, занятия на открытой воде.</p>
+                <span data-venue-schedule hidden>Доступные даты уточняйте в вейк-парке</span>
+                <a class="school-venue-action" href="https://stroginowakepark.ru/wakeboard/" data-venue-action data-primary-label="Перейти к записи в Строгино" aria-label="Расписание и запись, Строгино">Расписание и запись</a>
+                <a href="tel:+79257343438" data-venue-phone hidden>+7 (925) 734-34-38</a>
+                <a href="https://stroginowakepark.ru/contacts/" data-venue-source hidden>Контакты вейк-парка</a>
+              </div>
+            </details>
+
+            <details class="school-venue" name="school-venues" id="mywave-loaded" data-venue data-school-venue data-trial-venue>
+              <summary data-venue-name>MyWave Wake&amp;Loaded</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-type" data-venue-discipline>Вейксерф · WakeSkim</p>
+                <p class="venue-address" data-venue-address>Московская область, Рузский округ, д. Нововолково</p>
+                <p class="school-venue-description" data-venue-description>Занятия за катером на Озернинском водохранилище рядом с остановкой «Родник».</p>
+                <a class="text-link school-map-link" href="https://yandex.ru/maps/org/mywave/90003306477/">Спот MyWave на Яндекс Картах</a>
+                <span data-venue-schedule hidden>Время согласует команда MyWave</span>
+                <a class="school-venue-action" href="https://mywavewake.ru/services/" data-venue-action data-primary-label="Перейти к записи MyWave" aria-label="Расписание и запись, MyWave Wake и Loaded">Расписание и запись</a>
+                <a href="tel:+79160117179" data-venue-phone hidden>+7 (916) 011-71-79</a>
+                <a href="https://mywavewake.ru/#contacts" data-venue-source hidden>Контакты MyWave</a>
+              </div>
+            </details>
+
+            <details class="school-venue" name="school-venues" id="loaded" data-venue data-school-venue data-trial-venue>
+              <summary data-venue-name>LOADED</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-type" data-venue-discipline>Вейксерф · вейкборд</p>
+                <p class="venue-address" data-venue-address>Москва, Карамышевская набережная, вл. 13, корп. 2</p>
+                <p class="school-venue-description" data-venue-description>Клуб у Живописного моста. Среди форматов катания — вейк-лонгборд и вейк-фойл.</p>
+                <span data-venue-schedule hidden>Доступное время есть в календаре клуба</span>
+                <a class="school-venue-action" href="https://n347190.yclients.com/company/331899/personal/menu?o=" data-venue-action data-primary-label="Выбрать дату и время в LOADED" aria-label="Расписание и запись, LOADED">Расписание и запись</a>
+                <a href="tel:+79957883344" data-venue-phone hidden>+7 (995) 788-33-44</a>
+                <a href="https://loadedspot.ru/" data-venue-source hidden>Сайт LOADED SPOT</a>
+              </div>
+            </details>
+
+            <details class="school-venue" name="school-venues" id="ucha">
+              <summary>ФВЛС&amp;LOADED Уча</summary>
+              <div class="school-venue-body">
+                <p class="school-venue-description">Адрес и даты занятий на Уче уточняйте у команды LOADED.</p>
+                <a class="school-venue-action" href="https://loadedspot.ru/#contacts" aria-label="Контакты LOADED для уточнения занятий на Уче">Контакты LOADED</a>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="other-spots" id="other-spots" aria-labelledby="other-spots-title">
+          <h3 id="other-spots-title">Карта и другие площадки Москвы</h3>
+          <div class="spotmap-panel">
+            <img class="spotmap-map" src="https://static-maps.yandex.ru/1.x/?lang=ru_RU&amp;ll=37.625,55.767&amp;z=10&amp;size=650,360&amp;l=map&amp;pt=37.426878,55.804324,pm2gnm~37.461454,55.772083,pm2lbm~37.677014,55.723577,pm2blm~37.674705,55.694246,pm2rdm~37.887525,55.698523,pm2gnm~37.85289,55.635118,pm2blm~37.612227,55.834199,pm2rdm~37.7339358,55.9094928,pm2rdm~37.990759,55.669605,pm2rdm" alt="" width="650" height="360" loading="lazy" decoding="async">
+            <div class="spotmap-copy">
+              <h4>Карта SpotMap</h4>
+              <p>Площадки Москвы и других регионов. Полная карта откроется в новой вкладке.</p>
+              <a class="button button-primary" href="https://map.mywavewake.ru/embed?host=fvls" target="_blank" rel="noopener">Открыть карту</a>
+            </div>
+            <a class="spotmap-yandex-link" href="https://yandex.ru/maps/?ll=37.625%2C55.767&amp;z=10" target="_blank" rel="noopener" aria-label="Открыть этот район в Яндекс Картах">Открыть в Картах</a>
+          </div>
+
+          <div class="catalog-filters" data-filters hidden>
+            <div class="chip-group" role="group" aria-label="Дисциплина">
+              <button class="chip" type="button" data-discipline="all" aria-pressed="true">Все дисциплины</button>
+              <button class="chip" type="button" data-discipline="ski" aria-pressed="false">Водные лыжи</button>
+              <button class="chip" type="button" data-discipline="board" aria-pressed="false">Вейкборд</button>
+              <button class="chip" type="button" data-discipline="cable" aria-pressed="false">Вейкборд-электротяга</button>
+              <button class="chip" type="button" data-discipline="surf" aria-pressed="false">Вейксерф (Доска длинная)</button>
+              <button class="chip" type="button" data-discipline="skim" aria-pressed="false">WakeSkim (Доска короткая)</button>
+            </div>
+            <label class="venue-search" for="venue-search">
+              <span>Поиск площадок</span>
+              <span class="venue-search-field">
+                <span class="icon icon-search" aria-hidden="true"></span>
+                <input id="venue-search" type="search" placeholder="Название или адрес" aria-controls="venue-grid city-spots">
+              </span>
+            </label>
+          </div>
+
+          <p id="venue-count" class="sr-only" role="status"></p>
+          <div class="venue-grid" id="venue-grid">
+            <article class="venue" id="fenix" data-venue data-disciplines="ski board surf skim" data-trial-venue>
+              <div class="venue-image">
+                <img src="assets/water-ski.webp" alt="" width="700" height="467" loading="lazy" decoding="async">
+                <span class="venue-tag" data-venue-discipline>Водные лыжи</span>
+              </div>
+              <div class="venue-body">
+                <p class="venue-area"><span class="icon icon-pin" aria-hidden="true"></span>Хорошёво-Мнёвники</p>
+                <h4 data-venue-name>Вейк-клуб Fenix</h4>
+                <p class="venue-address" data-venue-address>Карамышевская набережная, 13, стр. 2</p>
+                <p class="venue-description" data-venue-description>Водные лыжи, вейкборд, вейксерф и WakeSkim. Занятия с инструктором для детей и взрослых.</p>
+                <p class="venue-schedule"><span class="icon icon-clock" aria-hidden="true"></span><span data-venue-schedule>Открытая вода, время по записи</span></p>
+                <a class="venue-action" href="https://wakeschool.ru/zapisatsya-na-zanyatiya" data-venue-action data-primary-label="Перейти к записи в Fenix" aria-label="Расписание и запись, вейк-клуб Fenix">Расписание и запись</a>
+                <a href="tel:+79031762708" data-venue-phone hidden>+7 (903) 176-27-08</a>
+                <a href="https://wakeschool.ru/waterskiing" data-venue-source hidden>Уроки на водных лыжах</a>
+              </div>
+            </article>
+
+            <article class="venue" id="serbor" data-venue data-disciplines="surf board skim" data-trial-venue>
+              <div class="venue-image">
+                <img src="assets/wakesurf.webp" alt="" width="700" height="467" loading="lazy" decoding="async">
+                <span class="venue-tag" data-venue-discipline>Вейксерф · WakeSkim</span>
+              </div>
+              <div class="venue-body">
+                <p class="venue-area"><span class="icon icon-pin" aria-hidden="true"></span>Хорошёво-Мнёвники</p>
+                <h4 data-venue-name>WakeDivision · Серебряный Бор</h4>
+                <p class="venue-address" data-venue-address>Карамышевская набережная, вл. 13, корп. 2</p>
+                <p class="venue-description" data-venue-description>Вейксерф, WakeSkim и вейкборд за катером. Вейксерф доступен детям с 7 лет.</p>
+                <p class="venue-schedule"><span class="icon icon-clock" aria-hidden="true"></span><span data-venue-schedule>Открытая вода, время в календаре клуба</span></p>
+                <a class="venue-action" href="https://n765292.yclients.com/" data-venue-action data-primary-label="Посмотреть даты и выбрать время" aria-label="Расписание и запись, WakeDivision Серебряный Бор">Расписание и запись</a>
+                <a href="tel:+79253590585" data-venue-phone hidden>+7 (925) 359-05-85</a>
+                <a href="https://wakedivision.ru/wakedivision-serbor" data-venue-source hidden>Сайт WakeDivision</a>
+              </div>
+            </article>
+          </div>
+          <div class="catalog-empty" id="catalog-empty" hidden>
+            <p>По этим фильтрам площадок пока нет.</p>
+            <button class="button button-outline" type="button" id="reset-filters">Сбросить фильтры</button>
+          </div>
+          <details class="spot-directory" id="city-spots">
+            <summary>Другие площадки из SpotMap</summary>
+            <p class="spot-directory-info">Опубликованные точки в административных границах Москвы по данным на <time datetime="2026-11-22">22 ноября 2026 года</time>. Уточняйте режим работы у площадок.</p>
+            <ul class="spot-list">
+              <li data-spot data-disciplines="surf skim">
+                <strong>BestWave</strong>
+                <span>Москва, Карамышевская наб. 13</span>
+              </li>
+              <li data-spot data-disciplines="ski board cable">
+                <strong>Connect Wake Park / Wake Connect</strong>
+                <span>Москва, ВДНХ, просп. Мира 119</span>
+              </li>
+              <li data-spot data-disciplines="ski board cable">
+                <strong>Dream Island Wake Park</strong>
+                <span>Москва, просп. Андропова 1</span>
+              </li>
+              <li data-spot data-disciplines="ski board cable">
+                <strong>Gloria Wake Park</strong>
+                <span>Новая Москва, Проектируемый пр. 389</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>HotSpot</strong>
+                <span>Москва, Карамышевская набережная</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Line Up MSC</strong>
+                <span>Адрес уточняется</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Maria Water Club</strong>
+                <span>Москва, Ленинградское ш. 39</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Moscow Wake School</strong>
+                <span>Москва, Строгино / Авиационная, 79</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>OceanSpirit</strong>
+                <span>Москва, ул. Исаковского, 37</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Relaxica Surf</strong>
+                <span>Москва, Карамышевская наб. 13</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>SigmaWave</strong>
+                <span>Исаковского, 37к1с2, причальный домик №14</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>SurfJam Moscow</strong>
+                <span>Москва, улица Исаковского, 37к2с1</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>TS Surfing</strong>
+                <span>Москва, Карамышевская наб. 13</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Wake Best</strong>
+                <span>Москва, Авиационная 79</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Wake City</strong>
+                <span>Москва, Карамышевская наб. 13</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>WakeDaSurf</strong>
+                <span>Москва, Авиационная 79</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>WakeDivision</strong>
+                <span>Москва, Рублёво-Архангельское / СберСити, Ривер Спейс</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Wakein</strong>
+                <span>Москва, Авиационная 79</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Wake People River Spot</strong>
+                <span>Москва, Лётная 99А</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Wakephoria</strong>
+                <span>Москва, Авиационная улица, 79к1с3</span>
+              </li>
+              <li data-spot data-disciplines="surf skim">
+                <strong>WakeShark</strong>
+                <span>Москва, Строгинский мост</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>WakeStart</strong>
+                <span>Москва, Лётная 99А</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Wake Station Sokolniki</strong>
+                <span>Москва, парк Сокольники</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Wakestyle Club</strong>
+                <span>Москва, Авиационная, 79к1с2, катер WAKESTYLE</span>
+              </li>
+              <li data-spot data-disciplines="ski board cable">
+                <strong>WakeStyle Spot (Крылатское)</strong>
+                <span>Москва, Крылатская, 8к1, три реверсивных установки</span>
+              </li>
+              <li data-spot data-disciplines="ski board cable">
+                <strong>WAKESTYLE — бассейн «Энигма»</strong>
+                <span>Москва, Живописная, 21с1, бассейн Энигма</span>
+              </li>
+              <li data-spot data-disciplines="surf skim">
+                <strong>Wakesurfclub Endless Summer</strong>
+                <span>Москва, Крылатское, ул. Островная, 2</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Waketeam</strong>
+                <span>Москва, Ленинградское шоссе</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>WakeUpMoscow</strong>
+                <span>Москва, Строгинский мост</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>Wave Hunters</strong>
+                <span>Москва, ул. Лётная, 99, стр. 1, ВСК «Буревестник»</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Xstarclub</strong>
+                <span>Москва, Авиационная 79</span>
+              </li>
+              <li data-spot data-disciplines="surf skim">
+                <strong>Вейксерф клуб Локал / Local Surf</strong>
+                <span>Москва, Строгинский мост</span>
+              </li>
+              <li data-spot data-disciplines="board surf skim">
+                <strong>ВейкШанс</strong>
+                <span>Москва, Авиационная 79к1с2, яхт-клуб River Club</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>ИлюхаКатает</strong>
+                <span>Москва, Строгинский мост</span>
+              </li>
+              <li data-spot data-disciplines="">
+                <strong>Порт Москва</strong>
+                <span>Москва, Карамышевская наб. 13</span>
+              </li>
+            </ul>
+            <p class="spot-directory-info">Данные предоставляют <a href="https://map.mywavewake.ru/">SpotMap</a> и <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap</a>.</p>
+          </details>
+        </section>
+        <aside class="school-note" aria-label="Городская спортивная школа">
+          <div>
+            <h3>Воднолыжный спорт в городской спортшколе</h3>
+            <p>Московская академия парусного и гребных видов спорта публикует условия поступления и информацию о наборе.</p>
+          </div>
+          <a class="text-link" href="https://msra.mossport.ru/regtoschool/">Узнать о наборе</a>
+        </aside>
+        <p class="catalog-note">Сведения о записи взяты с сайтов организаторов. Фото иллюстративные.</p>
+      </div>
+    </section>
+
+    <section class="section section-calendar" id="calendar" aria-labelledby="calendar-title">
+      <div class="container calendar-layout">
+        <div class="section-heading">
+          <h2 id="calendar-title">Календарь мероприятий</h2>
+          <p>Соревнования, встречи, сборы и другие события ФВЛС Москвы. Даты сезона 2027 появятся после подтверждения.</p>
+          <div class="calendar-actions">
+            <a class="button button-primary" href="https://github.com/YaroslavValeev/MyWave_Event_App" aria-describedby="organizer-destination">Для организатора</a>
+            <p id="organizer-destination">MyWave Event App · страница проекта</p>
+            <a class="text-link" href="https://waterski.mossport.ru/#events">Соревнования на Москомспорте</a>
+          </div>
+        </div>
+        <div class="calendar-content">
+          <div class="chip-group season-controls" data-season-controls role="group" aria-label="Год календаря мероприятий" hidden>
+            <button class="chip" type="button" data-season="2027" aria-pressed="true" aria-controls="calendar-2027">Сезон 2027</button>
+            <button class="chip" type="button" data-season="2026" aria-pressed="false" aria-controls="calendar-2026">Архив 2026</button>
+          </div>
+          <div class="event-panel calendar-plan" id="calendar-2027" data-events="2027">
+            <h3>Что будет в календаре</h3>
+            <ul class="event-categories" role="list">
+              <li><strong>Соревнования</strong><span>Кубки, первенства и чемпионаты</span></li>
+              <li><strong>Встречи с руководством</strong><span>Вопросы спортсменов, семей и клубов</span></li>
+              <li><strong>Сборы и лагеря</strong><span>Тренировочные выезды и смены</span></li>
+              <li><strong>Совместное прохождение УМО</strong><span>Углублённое медицинское обследование</span></li>
+              <li><strong>Образовательные мероприятия</strong><span>Семинары и мастер-классы</span></li>
+              <li><strong>Культурные события</strong><span>Фестивали и встречи сообщества</span></li>
+            </ul>
+            <div class="calendar-links">
+              <a class="text-link" href="school.html#competition-regulations-2027">Проект положения о стартах на 2027 год</a>
+              <a class="text-link" href="https://waterskifed.ru/posts">Анонсы ФВЛС России</a>
+            </div>
+          </div>
+          <div class="event-panel" id="calendar-2026" data-events="2026">
+            <ul class="event-list">
+              <li class="event">
+                <time class="event-date" datetime="2026-11-21"><b>21</b><span>ноя</span></time>
+                <div class="event-main">
+                  <h3><a href="https://wakebase.ru/comp/487">Осенний кубок ФВЛС России</a></h3>
+                  <p>Вейкборд-электротяга · SportStation</p>
+                </div>
+                <span class="event-kind">Всероссийские</span>
+              </li>
+              <li class="event">
+                <time class="event-date" datetime="2026-09-05"><b>05</b><span>сен</span></time>
+                <div class="event-main">
+                  <h3><a href="https://waterskifed.ru/posts/vserossiiskie-sorevnovaniia-po-vodnolyzhnomu-sportu-v-distsiplin">Всероссийские старты по вейкборду</a></h3>
+                  <p>Вейкборд-катер · Ривер Спейс</p>
+                </div>
+                <span class="event-kind">Всероссийские</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-news" id="news" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-heading news-heading">
+          <h2 id="news-title">Новости</h2>
+          <a class="text-link" href="https://waterskifed.ru/posts">Лента ФВЛС России</a>
+        </div>
+        <div class="news-grid">
+          <article class="news-feature">
+            <div class="news-feature-inner">
+              <p class="news-meta"><time datetime="2026-11-21">21 ноября 2026</time> · Соревнования</p>
+              <h3><a href="https://wakebase.ru/comp/487">Осенний кубок в Москве</a></h3>
+              <p>Спортсмены встретились в крытом вейк-парке SportStation на заключительном старте сезона по вейкборду-электротяге.</p>
+              <a class="text-link" href="https://wakebase.ru/comp/487">Страница соревнований</a>
+            </div>
+          </article>
+          <div class="news-list">
+            <article class="news-item">
+              <p class="news-meta"><time datetime="2026-10-17">17 октября 2026</time> · Вейксерф</p>
+              <h3><a href="https://waterskifed.ru/posts/year/2026/1">Шесть медалей на чемпионате мира в Ханчжоу</a></h3>
+              <p>ФВЛС России подвела итоги выступления спортсменов в вейксерфе и вейкскиме.</p>
+            </article>
+            <article class="news-item">
+              <p class="news-meta"><time datetime="2026-09-07">7 сентября 2026</time> · Вейкборд</p>
+              <h3><a href="https://waterskifed.ru/posts/year/2026/2">Москва приняла всероссийские старты по вейкборду</a></h3>
+              <p>В «Ривер Спейс» выступили спортсмены из разных регионов страны.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trial-band" id="trial" aria-labelledby="trial-title">
+      <div class="container trial-inner">
+        <div>
+          <h2 id="trial-title">Первое занятие</h2>
+          <p>Выберите площадку и свяжитесь с клубом, чтобы подобрать время и уточнить, что взять с собой.</p>
+        </div>
+        <a class="button button-dark" href="#venues" data-trial>Выбрать площадку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts" aria-labelledby="contacts-title">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="ФВЛС Москвы, в начало страницы">
+            <img src="assets/mark.png" alt="" width="42" height="42">
+            <span>ФВЛС <strong>Москвы</strong></span>
+          </a>
+          <p>Федерация воднолыжного спорта города Москвы</p>
+        </div>
+        <div class="footer-contacts">
+          <h2 id="contacts-title">Контакты</h2>
+          <a href="https://waterski.mossport.ru/#ask">Вопрос о поступлении в спортшколу</a>
+          <a href="#venues">Контакты клубов и школ</a>
+        </div>
+        <div class="footer-federation">
+          <h2>ФВЛС России</h2>
+          <a class="national-logo" href="https://waterskifed.ru/" aria-label="На сайт Федерации воднолыжного спорта России">
+            <img src="assets/ruwf-logo.png" alt="" width="158" height="49" loading="lazy" decoding="async">
+          </a>
+          <a href="https://waterskifed.ru/contacts">Контакты российской федерации</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a class="footer-mywave" href="https://mywavewake.ru/">
+          <img src="assets/mywave-logo.svg" alt="MyWave" width="126" height="40" loading="lazy" decoding="async">
+        </a>
+        <a href="#top">К началу страницы</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="booking" class="booking-dialog" aria-labelledby="booking-title">
+    <div class="booking-inner">
+      <form method="dialog" class="close-row">
+        <button class="dialog-close" aria-label="Закрыть окно" type="submit"><span aria-hidden="true"></span></button>
+      </form>
+      <h2 id="booking-title">Пробное занятие</h2>
+      <p id="booking-intro">Выберите клуб. Время и запись доступны у организатора занятия.</p>
+      <div id="booking-picker">
+        <label for="booking-venue">Площадка</label>
+        <div class="select-shell">
+          <select id="booking-venue">
+            <option value="">Выберите площадку</option>
+            <optgroup label="Школа «ФВЛС Москвы»" data-school-options></optgroup>
+            <optgroup label="Другие площадки Москвы" data-other-options></optgroup>
+          </select>
+        </div>
+      </div>
+      <div id="booking-detail" class="booking-detail" hidden>
+        <h3 id="booking-club"></h3>
+        <p id="booking-address" class="booking-address"></p>
+        <p id="booking-description"></p>
+        <p class="booking-schedule"><span class="icon icon-clock" aria-hidden="true"></span><span id="booking-schedule-text"></span></p>
+        <a id="booking-primary" class="button button-dark" href="#venues"></a>
+        <div class="booking-links">
+          <a id="booking-source" class="text-link" href="#venues"></a>
+          <a id="booking-phone" class="text-link" href="#venues"></a>
+        </div>
+      </div>
+      <a href="#venues" id="booking-catalog" class="text-link">Все площадки и спортшколы</a>
+    </div>
+  </dialog>
+</body>
+</html>
