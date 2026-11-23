@@ -228,39 +228,57 @@ button:disabled { opacity: .6; cursor: default; }
   background: var(--navy);
 }
 
-.hero-feature {
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3.4vw, 3.5rem);
+  padding-block: clamp(2.25rem, 3.8vw, 3.5rem);
+}
+
+.hero-disciplines {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-disciplines a {
   position: relative;
   isolation: isolate;
   display: grid;
-  min-height: clamp(32rem, 42.5vw, 42rem);
-  align-items: center;
-  background: #112d46;
+  align-items: end;
+  aspect-ratio: 1.22;
   overflow: hidden;
+  border: 1px solid #4f768b;
+  border-radius: .5rem;
+  background: #16354a;
 }
 
-.hero-picture,
-.hero-feature::after {
+.hero-disciplines img {
   position: absolute;
   inset: 0;
-  z-index: -2;
-}
-
-.hero-picture img {
+  z-index: -1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 53%;
+  object-position: center 26%;
 }
 
-.hero-feature::after {
-  content: "";
-  z-index: -1;
-  background:
-    linear-gradient(0deg, #081a2cb8 0%, transparent 33%),
-    linear-gradient(90deg, #081a2c 0%, #081a2cf2 19%, #081a2cba 39%, #081a2c42 61%, transparent 81%);
-}
+.hero-disciplines .hero-image-top { object-position: center top; }
 
-.hero-inner { padding-block: 4rem 4.35rem; }
+.hero-disciplines a:hover { border-color: var(--aqua); }
+
+.hero-disciplines span {
+  padding: .95em .5rem .4rem;
+  background: linear-gradient(transparent, #081a2ce0 .95em, #081a2c);
+  font-size: clamp(.68rem, 1.16vw, .88rem);
+  font-weight: 800;
+  line-height: 1.23;
+  overflow-wrap: anywhere;
+}
 
 .eyebrow {
   font-size: .875rem;
@@ -290,14 +308,14 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .hero h1 {
-  font-size: clamp(3.5rem, 6.1vw, 6rem);
+  font-size: clamp(2.9rem, 5.05vw, 5rem);
   font-weight: 800;
   letter-spacing: -.075em;
   line-height: 1.005;
   text-wrap: balance;
 }
 
-.hero h1 span { color: var(--aqua); }
+.hero h1 span { display: block; color: var(--aqua); }
 
 .hero-intro {
   max-width: 28.75rem;
@@ -370,6 +388,7 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .discipline-card:hover,
+.discipline-card:target,
 .discipline-card:focus-visible {
   border-color: #79d9f2;
   background: #183951;
@@ -481,8 +500,12 @@ button:disabled { opacity: .6; cursor: default; }
 .athlete-tree {
   position: relative;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  row-gap: 1.6rem;
   margin-top: 2.6rem;
 }
+
+.athlete-ranks { grid-row: span 2; }
 
 .athlete-tree::before,
 .athlete-tree::after {
@@ -519,6 +542,32 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .athlete-branch-title img { flex: none; }
+
+.athlete-coach {
+  grid-column: 2 / -1;
+  padding: clamp(.9rem, 1.7vw, 1.3rem);
+  border: 1px solid #456176;
+  border-radius: .65rem;
+  background: #102940;
+}
+
+.athlete-coach .athlete-branch-title { justify-content: start; }
+
+.athlete-coach-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin: .65rem 0 0;
+}
+
+.athlete-coach-details > div {
+  padding-top: .65rem;
+  border-top: 1px solid #456176;
+}
+
+.athlete-coach-details dt { font-weight: 800; }
+.athlete-coach-details dd { margin: .28rem 0 0; color: #d9e7f1; font-size: .92rem; line-height: 1.52; }
+.athlete-coach-details dd p + p { margin-top: .5rem; }
 
 .athlete-rank-group { margin-top: 1.1rem; }
 .athlete-rank-group h5 { margin: 0 0 .35rem; font-size: 1rem; }
@@ -839,16 +888,7 @@ button:disabled { opacity: .6; cursor: default; }
   font-weight: 550;
 }
 
-.catalog-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  flex-wrap: wrap;
-  gap: .65rem 1.25rem;
-  margin-bottom: 1.6rem;
-}
-
-.catalog-heading > .text-link { margin-top: 0; }
+.catalog-heading { margin-bottom: 1.6rem; }
 
 .school-locations {
   padding: clamp(1rem, 3vw, 2rem);
@@ -873,8 +913,7 @@ button:disabled { opacity: .6; cursor: default; }
   font-weight: 800;
 }
 
-.school-heading h3,
-.other-spots > h3 {
+.school-heading h3 {
   font-size: clamp(1.55rem, 3.05vw, 2.55rem);
   font-weight: 800;
   letter-spacing: -.055em;
@@ -1189,8 +1228,6 @@ button:disabled { opacity: .6; cursor: default; }
   padding-top: clamp(2.35rem, 5vw, 4rem);
 }
 
-.other-spots > h3 { margin-bottom: 1rem; }
-
 .spotmap-panel {
   position: relative;
   isolation: isolate;
@@ -1224,7 +1261,7 @@ button:disabled { opacity: .6; cursor: default; }
 
 .spotmap-copy { max-width: min(23rem, 53%); }
 
-.spotmap-panel h4 {
+.spotmap-panel h3 {
   font-size: clamp(1.2rem, 2vw, 1.55rem);
   font-weight: 800;
   letter-spacing: -.035em;
@@ -2010,6 +2047,8 @@ button:disabled { opacity: .6; cursor: default; }
 
 @media (max-width: 900px) {
   .athlete-tree { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; margin-top: 1.55rem; }
+  .athlete-ranks { grid-row: auto; }
+  .athlete-coach { grid-column: auto; }
   .athlete-tree::before, .athlete-tree::after { display: none; }
   .athlete-branch-title { justify-content: start; }
   .athlete-branch + .athlete-branch { padding-top: 1.15rem; border-top: 1px solid #345268; }
@@ -2022,14 +2061,10 @@ button:disabled { opacity: .6; cursor: default; }
   .header-inner { min-height: 4.125rem; }
   .main-nav { gap: 1rem; }
   .header-book { display: none; }
-  .hero-feature { min-height: 33rem; }
-  .hero h1 { font-size: clamp(3.3rem, 8vw, 5.2rem); }
-  .hero-picture img { object-position: 62% 52%; }
-  .hero-feature::after {
-    background:
-      linear-gradient(0deg, #081a2cbf 0%, transparent 45%),
-      linear-gradient(90deg, #081a2cf5 0%, #081a2cd9 20%, #081a2c86 50%, transparent 92%);
-  }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero h1 { font-size: clamp(2.55rem, 9.4vw, 4.65rem); }
+  .hero-disciplines { width: min(100%, 40rem); }
+  .hero-disciplines span { font-size: clamp(.7rem, 2vw, .88rem); }
 }
 
 @media (max-width: 720px) {
@@ -2049,7 +2084,7 @@ button:disabled { opacity: .6; cursor: default; }
 
 @media (max-width: 660px) {
   html { scroll-padding-top: 5.25rem; }
-  .athlete-howto-grid, .athlete-evsk-links { grid-template-columns: minmax(0, 1fr); }
+  .athlete-howto-grid, .athlete-evsk-links, .athlete-coach-details { grid-template-columns: minmax(0, 1fr); }
   .site-header { position: sticky; }
   .header-inner { min-height: 4.1rem; flex-wrap: wrap; gap: 0; }
   .brand img { width: 2.25rem; height: 2.25rem; }
@@ -2076,12 +2111,6 @@ button:disabled { opacity: .6; cursor: default; }
   .main-nav.is-open { display: grid; }
   .main-nav.is-open .mobile-book { display: inline-flex !important; margin-top: .3rem; }
   .main-nav > a:not(.button) { min-height: 2.55rem; font-size: 1rem; }
-  .hero-feature { min-height: 35.5rem; align-items: end; }
-  .hero-picture img { object-position: center 40%; }
-  .hero-feature::after {
-    background: linear-gradient(0deg, #081a2c 0%, #081a2cf7 27%, #081a2cd9 48%, #081a2c45 72%, #081a2c18 100%);
-  }
-  .hero-inner { padding-block: 11.5rem 2.5rem; }
   .hero-eyebrow {
     gap: .5rem;
     margin-bottom: .85rem;
@@ -2090,10 +2119,8 @@ button:disabled { opacity: .6; cursor: default; }
     max-width: 22rem;
   }
   .hero-eyebrow::before { width: 1.05rem; }
-  .hero h1 { font-size: clamp(2.5rem, 10.4vw, 4.35rem); }
   .hero-intro { margin-top: 1rem; line-height: 1.55; }
   .hero-actions { margin-top: 1.25rem; gap: .55rem; }
-  .catalog-heading { align-items: flex-start; }
   .school-heading { align-items: flex-start; }
   .athlete-map { justify-items: start; }
   .athlete-map-root { margin-bottom: 0; }
@@ -2142,8 +2169,10 @@ button:disabled { opacity: .6; cursor: default; }
   .spotmap-map { position: static; width: 100%; height: auto; }
   .spotmap-copy { max-width: none; padding: 1rem; }
   .event-categories { grid-template-columns: 1fr; }
-  .hero-feature { min-height: 36.6rem; }
-  .hero-inner { padding-top: 11.2rem; }
+  .hero-inner { padding-block: 1.75rem; }
+  .hero-disciplines { gap: .35rem; }
+  .hero-disciplines a { aspect-ratio: 1; }
+  .hero-disciplines span { padding-inline: .3rem; padding-bottom: .26rem; }
   .hero-actions { align-items: stretch; }
   .hero-actions .button { min-height: 3rem; padding-inline: .8rem; font-size: .875rem; }
   .catalog-empty { padding: 1rem; }
