@@ -421,6 +421,16 @@ button, select { cursor: pointer; }
   background: url("assets/athlete-path/protocol.png") center / contain no-repeat;
 }
 
+.discipline-document--en {
+  align-content: center;
+  gap: .12rem;
+  color: #bdecfa;
+  font-size: .66rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.discipline-document--en::before { width: 1.25rem; height: 1.25rem; }
 .discipline-document:hover { border-color: var(--aqua); background: #21506b; }
 .discipline-document:focus-visible { outline-color: var(--aqua); }
 
