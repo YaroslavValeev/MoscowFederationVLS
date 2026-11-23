@@ -37,14 +37,11 @@
   align-items: center;
   min-height: 2.65rem;
   padding: .45rem .8rem;
-  border: 1px solid #57758b;
   border-radius: .5rem;
-  color: var(--white);
   font-size: .9rem;
   font-weight: 750;
 }
 
-.academy-jumps a:hover { border-color: var(--aqua); color: var(--aqua); }
 .academy-section h2 { font-size: clamp(1.85rem, 4.3vw, 3.15rem); }
 .academy-section h3 { font-size: clamp(1.15rem, 2.4vw, 1.65rem); line-height: 1.25; }
 .academy-section p, .academy-section dd, .academy-list { line-height: 1.55; }
