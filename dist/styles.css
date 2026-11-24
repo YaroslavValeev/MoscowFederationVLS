@@ -1606,19 +1606,16 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .school-note {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: .75rem 1.5rem;
-  margin-top: 1.2rem;
+  display: grid;
+  align-self: start;
+  gap: .75rem;
   padding: 1rem clamp(1rem, 2.2vw, 1.5rem);
   border: 1px solid var(--line);
   border-radius: .65rem;
   background: #eaf4f9;
 }
 
-.school-note h3 { font-size: 1rem; font-weight: 800; }
+.school-note h4 { font-size: clamp(1.05rem, 1.75vw, 1.35rem); font-weight: 800; line-height: 1.3; }
 .school-note p { margin-top: .25rem; color: var(--muted); line-height: 1.55; }
 
 .catalog-note {
@@ -1647,12 +1644,16 @@ button:disabled { opacity: .6; cursor: default; }
 .calendar-layout {
   display: grid;
   grid-template-columns: minmax(0, .77fr) minmax(0, 1.23fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "heading schedule" "actions schedule";
   align-items: start;
-  gap: clamp(1.75rem, 6vw, 6rem);
+  gap: 1.05rem clamp(1.75rem, 6vw, 6rem);
 }
 
+.calendar-heading { grid-area: heading; }
+.calendar-content { grid-area: schedule; }
 .section-calendar .section-heading > p { max-width: 21.5rem; color: #bdcfdd; }
-.calendar-actions { display: grid; justify-items: start; gap: .45rem; margin-top: 1.05rem; }
+.calendar-actions { grid-area: actions; display: grid; justify-items: start; gap: .45rem; }
 .calendar-actions p { color: #bdcfdd; font-size: .86rem; }
 .calendar-actions .text-link { margin-top: .4rem; }
 
@@ -1676,6 +1677,87 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .season-controls { margin-bottom: .85rem; }
+
+.calendar-month {
+  margin-bottom: .85rem;
+  padding: clamp(.65rem, 2vw, 1rem);
+  border: 1px solid #375269;
+  border-radius: .6rem;
+  background: #10283e;
+}
+
+.calendar-month-nav {
+  display: grid;
+  grid-template-columns: 2.65rem minmax(0, 1fr) 2.65rem;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .35rem;
+  text-align: center;
+}
+
+.calendar-month-nav button {
+  display: grid;
+  place-content: center;
+  min-height: 2.55rem;
+  padding: 0;
+  border-radius: .42rem;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.calendar-month-nav h3 { font-size: clamp(1.05rem, 2.1vw, 1.35rem); font-weight: 800; line-height: 1.25; }
+
+.calendar-grid {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: .2rem .23rem;
+  text-align: center;
+}
+
+.calendar-grid th {
+  padding: .3rem 0;
+  color: #b5cfde;
+  font-size: .8rem;
+  font-weight: 750;
+}
+
+.calendar-grid td { padding: 0; }
+
+.calendar-day {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: .2rem;
+  width: 100%;
+  min-height: 2.4rem;
+  padding: .18rem 0;
+  border-radius: .38rem;
+  font-size: .9rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+span.calendar-day { color: #c7dce9; }
+
+.calendar-day[data-calendar-date] { color: var(--aqua); }
+
+.calendar-day[data-calendar-date]::after {
+  content: "";
+  width: .29rem;
+  height: .29rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.calendar-day[aria-pressed="true"] {
+  outline: 1px solid var(--aqua);
+  outline-offset: 1px;
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
+.calendar-day[aria-pressed="true"]:focus-visible { outline: 3px solid var(--aqua); }
+.calendar-empty { color: #bdcfdd; font-size: .94rem; line-height: 1.5; }
 
 .event-list {
   list-style: none;
@@ -1712,6 +1794,7 @@ button:disabled { opacity: .6; cursor: default; }
 .event-date span { font-size: .875rem; line-height: 1; font-weight: 750; }
 
 .event-main h3 { font-size: clamp(1rem, 1.55vw, 1.22rem); line-height: 1.3; font-weight: 800; }
+.event-main a { text-decoration: underline; text-underline-offset: .18em; }
 .event-main a:hover { color: var(--aqua); }
 .event-main p { margin-top: .23rem; color: #cee0ec; font-size: .9rem; line-height: 1.45; }
 
@@ -1727,6 +1810,7 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .calendar-plan {
+  margin-top: .85rem;
   padding: clamp(.95rem, 2vw, 1.35rem);
   border: 1px solid #375269;
   border-radius: .6rem;
@@ -1756,17 +1840,7 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .event-categories span { color: #cee0ec; font-size: .88rem; }
-.season-controls[hidden] ~ .event-panel + .event-panel { margin-top: .85rem; }
-
-.news-heading {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: .75rem;
-  margin-bottom: 1.7rem;
-}
-
-.news-heading > .text-link { margin-top: 0; }
+.news-heading { margin-bottom: 1.7rem; }
 
 .news-grid {
   display: grid;
@@ -2051,7 +2125,11 @@ button:disabled { opacity: .6; cursor: default; }
 @media (max-width: 850px) {
   .school-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .athlete-sponsor { grid-template-columns: minmax(0, 1fr); }
-  .calendar-layout { grid-template-columns: minmax(0, 1fr); }
+  .calendar-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "heading" "schedule" "actions";
+  }
   .header-inner { min-height: 4.125rem; }
   .main-nav { gap: 1rem; }
   .header-book { display: none; }
@@ -2135,7 +2213,6 @@ button:disabled { opacity: .6; cursor: default; }
   .venue-search { flex-basis: 100%; }
   .news-grid { grid-template-columns: 1fr; }
   .section-calendar .section-heading h2 { max-width: 22rem; }
-  .news-heading { flex-wrap: wrap; align-items: start; gap: .5rem 1rem; }
   .trial-inner { flex-wrap: wrap; }
   .trial-band::after { inset: -6rem -9rem -6rem 35%; opacity: .2; }
   .footer-content { grid-template-columns: 1fr 1fr; gap: 1.5rem; }

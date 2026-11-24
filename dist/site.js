@@ -57,7 +57,6 @@ function filterVenues() {
   const clubCount = filterEntries(otherVenues, discipline, query);
   const directoryCount = filterEntries(directorySpots, discipline, query);
   const count = clubCount + directoryCount;
-  venueGrid.hidden = clubCount === 0;
   directory.hidden = directoryCount === 0;
   if (directoryCount > 0 && (query || discipline !== 'all')) directory.open = true;
   emptyCatalog.hidden = count > 0;
@@ -72,19 +71,23 @@ function resetFilters() {
   filterVenues();
 }
 
-document.querySelector('[data-filters]').hidden = false;
-for (const button of disciplineButtons) {
-  button.addEventListener('click', () => {
-    markSelected(disciplineButtons, button);
-    filterVenues();
+const filters = document.querySelector('[data-filters]');
+const filtersEnabled = filters.dataset.filters !== 'off';
+if (filtersEnabled) {
+  filters.hidden = false;
+  for (const button of disciplineButtons) {
+    button.addEventListener('click', () => {
+      markSelected(disciplineButtons, button);
+      filterVenues();
+    });
+  }
+  venueSearch.addEventListener('input', filterVenues);
+  document.querySelector('#reset-filters').addEventListener('click', () => {
+    resetFilters();
+    disciplineButtons[0].focus();
   });
+  filterVenues();
 }
-venueSearch.addEventListener('input', filterVenues);
-document.querySelector('#reset-filters').addEventListener('click', () => {
-  resetFilters();
-  disciplineButtons[0].focus();
-});
-filterVenues();
 
 function openLinkedSchoolVenue() {
   const venue = document.getElementById(window.location.hash.slice(1));
@@ -94,17 +97,121 @@ function openLinkedSchoolVenue() {
 openLinkedSchoolVenue();
 window.addEventListener('hashchange', openLinkedSchoolVenue);
 
-const seasonButtons = [...document.querySelectorAll('[data-season]')];
-const eventPanels = [...document.querySelectorAll('[data-events]')];
-function showSeason(button) {
-  markSelected(seasonButtons, button);
-  eventPanels.forEach(panel => {
-    panel.hidden = panel.dataset.events !== button.dataset.season;
+function initCalendar() {
+  const calendar = document.querySelector('#calendar');
+  const monthPanel = calendar.querySelector('#calendar-month');
+  const monthTitle = calendar.querySelector('#calendar-month-title');
+  const days = calendar.querySelector('[data-calendar-days]');
+  const seasons = [...calendar.querySelectorAll('[data-season]')];
+  const steps = [...calendar.querySelectorAll('[data-month-step]')];
+  const eventList = calendar.querySelector('#calendar-events');
+  const empty = calendar.querySelector('[data-calendar-empty]');
+  const status = calendar.querySelector('[data-calendar-status]');
+  const plan = calendar.querySelector('[data-calendar-plan]');
+  const events = [...eventList.querySelectorAll('.event')].map(item => {
+    const start = item.querySelector('time').dateTime;
+    return { item, start, end: item.dataset.eventEnd || start };
   });
+  const years = seasons.map(button => Number(button.dataset.season));
+  const firstMonth = Date.UTC(Math.min(...years), 0, 1);
+  const lastMonth = Date.UTC(Math.max(...years), 11, 1);
+  const monthFormat = new Intl.DateTimeFormat('ru-RU', { month: 'long', timeZone: 'UTC' });
+  const dayFormat = new Intl.DateTimeFormat('ru-RU', { dateStyle: 'full', timeZone: 'UTC' });
+  const dateKey = date => date.toISOString().slice(0, 10);
+  let month;
+  let monthEnd;
+  let selectedDay = '';
+
+  function showEvents() {
+    const start = selectedDay || dateKey(month);
+    const end = selectedDay || dateKey(monthEnd);
+    let count = 0;
+    for (const event of events) {
+      event.item.hidden = event.start > end || event.end < start;
+      if (!event.item.hidden) count += 1;
+    }
+    eventList.hidden = count === 0;
+    empty.hidden = count !== 0;
+    status.textContent = count ? `Показано событий — ${count}.` : empty.textContent;
+  }
+
+  function showMonth(year, index) {
+    month = new Date(Date.UTC(year, index, 1));
+    year = month.getUTCFullYear();
+    index = month.getUTCMonth();
+    monthEnd = new Date(Date.UTC(year, index + 1, 0));
+    selectedDay = '';
+    const name = monthFormat.format(month);
+    monthTitle.textContent = `${name[0].toLocaleUpperCase('ru-RU')}${name.slice(1)} ${year}`;
+    markSelected(seasons, seasons.find(button => Number(button.dataset.season) === year));
+    for (const step of steps) {
+      const target = Date.UTC(year, index + Number(step.dataset.monthStep), 1);
+      step.disabled = target < firstMonth || target > lastMonth;
+    }
+    plan.hidden = Number(plan.dataset.calendarPlan) !== year;
+
+    const offset = (month.getUTCDay() + 6) % 7;
+    const dayCount = monthEnd.getUTCDate();
+    const weeks = Math.ceil((offset + dayCount) / 7);
+    days.replaceChildren();
+    for (let week = 0; week < weeks; week += 1) {
+      const row = days.insertRow();
+      for (let weekday = 0; weekday < 7; weekday += 1) {
+        const cell = row.insertCell();
+        const number = week * 7 + weekday - offset + 1;
+        if (number < 1 || number > dayCount) continue;
+
+        const date = new Date(Date.UTC(year, index, number));
+        const key = dateKey(date);
+        const count = events.filter(event => event.start <= key && event.end >= key).length;
+        const day = document.createElement(count ? 'button' : 'span');
+        day.className = 'calendar-day';
+        day.textContent = String(number);
+        if (count) {
+          day.type = 'button';
+          day.dataset.calendarDate = key;
+          day.setAttribute('aria-pressed', 'false');
+          day.setAttribute('aria-label', `${dayFormat.format(date)}. Событий — ${count}.`);
+        }
+        cell.append(day);
+      }
+    }
+    showEvents();
+  }
+
+  function showSeason(year) {
+    const start = `${year}-01-01`;
+    const end = `${year}-12-31`;
+    const latest = events.filter(event => event.start <= end && event.end >= start)
+      .map(event => event.end < end ? event.end : end).sort().at(-1);
+    showMonth(year, latest ? Number(latest.slice(5, 7)) - 1 : 0);
+  }
+
+  for (const button of seasons) {
+    button.addEventListener('click', () => showSeason(Number(button.dataset.season)));
+  }
+  for (const button of steps) {
+    button.addEventListener('click', () => {
+      showMonth(month.getUTCFullYear(), month.getUTCMonth() + Number(button.dataset.monthStep));
+    });
+  }
+  days.addEventListener('click', event => {
+    const button = event.target.closest('[data-calendar-date]');
+    if (!button) return;
+    const date = button.dataset.calendarDate;
+    selectedDay = selectedDay === date ? '' : date;
+    markSelected(days.querySelectorAll('[data-calendar-date]'), selectedDay ? button : null);
+    showEvents();
+  });
+
+  const latest = events.map(event => event.end).sort().at(-1);
+  const latestYear = Number(latest?.slice(0, 4));
+  showSeason(years.includes(latestYear) ? latestYear : years[0]);
+  calendar.querySelector('[data-season-controls]').hidden = false;
+  monthPanel.hidden = false;
 }
-document.querySelector('[data-season-controls]').hidden = false;
-seasonButtons.forEach(button => button.addEventListener('click', () => showSeason(button)));
-showSeason(seasonButtons[0]);
+
+initCalendar();
 
 const dialog = document.querySelector('#booking');
 if (typeof dialog.showModal === 'function') {
@@ -180,7 +287,7 @@ if (typeof dialog.showModal === 'function') {
   });
   goToCatalog.addEventListener('click', () => {
     returnFocus = null;
-    resetFilters();
+    if (filtersEnabled) resetFilters();
     dialog.close();
     document.querySelector('#venues-title').focus({ preventScroll: true });
   });
