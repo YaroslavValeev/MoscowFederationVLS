@@ -9,7 +9,7 @@
   <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/mark.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
   <script src="site.js?v=2" defer></script>
   <title>ФВЛС Москвы · Воднолыжный спорт</title>
 </head>
@@ -48,15 +48,60 @@
           </div>
         </div>
         <ul class="hero-disciplines" role="list" aria-label="Иллюстрации дисциплин ФВЛС Москвы">
-          <li><a href="#discipline-waterski"><img src="assets/hero/waterski.webp?v=3" alt="" width="416" height="416" fetchpriority="high"><span>Водные лыжи</span></a></li>
-          <li><a href="#discipline-cable-ski"><img src="assets/hero/cable-ski.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Водные лыжи на электротяге</span></a></li>
-          <li><a href="#discipline-boat-wakeboard"><img src="assets/hero/boat-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Вейкборд за катером</span></a></li>
-          <li><a href="#discipline-cable-wakeboard"><img src="assets/hero/cable-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Вейкборд на электротяге</span></a></li>
-          <li><a href="#discipline-wakesurf"><img src="assets/hero/wakesurf-wakeskim.webp?v=3" alt="" width="416" height="416" decoding="async"><span lang="en">Wakesurf / Wakeskim</span></a></li>
-          <li><a href="#discipline-adaptive"><img src="assets/hero/adaptive.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Адаптивные дисциплины</span></a></li>
-          <li><a href="#discipline-show"><img src="assets/hero/show.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Воднолыжное шоу</span></a></li>
-          <li><a href="#discipline-longboard"><img src="assets/hero/longboard.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Вейк-лонгборд</span></a></li>
-          <li><a href="#discipline-foil"><img src="assets/hero/foil.webp?v=3" alt="" width="416" height="416" decoding="async"><span>Вейк-фойл</span></a></li>
+          <li>
+            <a href="#discipline-waterski">
+              <div class="hero-illustration"><img src="assets/hero/waterski.webp?v=3" alt="" width="416" height="416" fetchpriority="high"></div>
+              <span>Водные лыжи</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-cable-ski">
+              <div class="hero-illustration"><img src="assets/hero/cable-ski.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Водные лыжи на электротяге</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-boat-wakeboard">
+              <div class="hero-illustration"><img src="assets/hero/boat-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Вейкборд за катером</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-cable-wakeboard">
+              <div class="hero-illustration"><img src="assets/hero/cable-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Вейкборд на электротяге</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-wakesurf">
+              <div class="hero-illustration"><img src="assets/hero/wakesurf-wakeskim.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span lang="en">Wakesurf / Wakeskim</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-adaptive">
+              <div class="hero-illustration"><img src="assets/hero/adaptive.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Адаптивные дисциплины</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-show">
+              <div class="hero-illustration"><img src="assets/hero/show.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Воднолыжное шоу</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-longboard">
+              <div class="hero-illustration"><img src="assets/hero/longboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Вейк-лонгборд</span>
+            </a>
+          </li>
+          <li>
+            <a href="#discipline-foil">
+              <div class="hero-illustration"><img src="assets/hero/foil.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
+              <span>Вейк-фойл</span>
+            </a>
+          </li>
         </ul>
       </div>
       <section class="discipline-band" id="disciplines" aria-labelledby="disciplines-title">
@@ -939,7 +984,7 @@
           <h2 id="calendar-title">Календарь мероприятий</h2>
           <p>Соревнования, встречи, сборы и другие события воднолыжного спорта. Даты сезона 2027 появятся после подтверждения.</p>
         </div>
-        <div class="calendar-content">
+        <div class="calendar-widget">
           <div class="chip-group season-controls" data-season-controls role="group" aria-label="Год календаря мероприятий" hidden>
             <button class="chip" type="button" data-season="2026" aria-pressed="true" aria-controls="calendar-month calendar-events">Архив 2026</button>
             <button class="chip" type="button" data-season="2027" aria-pressed="false" aria-controls="calendar-month calendar-events calendar-2027">Сезон 2027</button>
@@ -965,6 +1010,8 @@
               <tbody data-calendar-days></tbody>
             </table>
           </div>
+        </div>
+        <div class="calendar-content">
           <p class="calendar-empty" data-calendar-empty hidden>В этом месяце в календаре пока нет событий.</p>
           <p class="sr-only" data-calendar-status role="status"></p>
           <div class="event-panel" id="calendar-events">
@@ -1038,7 +1085,10 @@
         <div class="calendar-actions">
           <a class="button button-primary" href="https://github.com/YaroslavValeev/MyWave_Event_App" aria-describedby="organizer-destination">Для организатора</a>
           <p id="organizer-destination">MyWave Event App · страница проекта</p>
-          <a class="text-link" href="https://waterski.mossport.ru/#events">Соревнования на Москомспорте</a>
+          <a class="text-link calendar-source-link" href="https://waterski.mossport.ru/#events">
+            <img src="assets/moskomsport-mark.png" alt="" width="200" height="237" loading="lazy" decoding="async">
+            <span>Соревнования на Москомспорте</span>
+          </a>
         </div>
       </div>
     </section>

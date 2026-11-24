@@ -246,28 +246,40 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .hero-disciplines a {
+  isolation: isolate;
   display: grid;
   grid-template-rows: auto 1fr;
   height: 100%;
   overflow: hidden;
   border: 1px solid #4f768b;
   border-radius: .5rem;
-  background: #16354a;
+  background: var(--navy-raised);
 }
 
-.hero-disciplines img {
+.hero-illustration {
+  background: var(--aqua);
+  mix-blend-mode: screen;
+}
+
+.hero-illustration img {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1.4;
   object-fit: contain;
   background: #fdf7ec;
+  filter: grayscale(1) brightness(.82) contrast(2.05) invert(1);
+  mix-blend-mode: multiply;
 }
 
 .hero-disciplines a:hover { border-color: var(--aqua); }
 
-.hero-disciplines span {
-  align-self: center;
+.hero-disciplines a > span {
+  display: grid;
+  align-content: center;
   padding: .34rem .5rem .38rem;
+  border-top: 1px solid #345b72;
+  background: #16354a;
   font-size: clamp(.68rem, 1.16vw, .88rem);
   font-weight: 800;
   line-height: 1.23;
@@ -1643,19 +1655,21 @@ button:disabled { opacity: .6; cursor: default; }
 
 .calendar-layout {
   display: grid;
-  grid-template-columns: minmax(0, .77fr) minmax(0, 1.23fr);
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "heading schedule" "actions schedule";
+  grid-template-columns: minmax(0, 1fr) clamp(14rem, 34vw, 18rem);
+  grid-template-areas: "heading widget" "actions widget" "schedule schedule";
   align-items: start;
-  gap: 1.05rem clamp(1.75rem, 6vw, 6rem);
+  gap: 1.05rem clamp(1rem, 4vw, 3.35rem);
 }
 
 .calendar-heading { grid-area: heading; }
+.calendar-widget { grid-area: widget; width: min(100%, 18rem); }
 .calendar-content { grid-area: schedule; }
 .section-calendar .section-heading > p { max-width: 21.5rem; color: #bdcfdd; }
 .calendar-actions { grid-area: actions; display: grid; justify-items: start; gap: .45rem; }
 .calendar-actions p { color: #bdcfdd; font-size: .86rem; }
 .calendar-actions .text-link { margin-top: .4rem; }
+.calendar-source-link { display: inline-flex; align-items: center; gap: .55rem; }
+.calendar-source-link img { width: 1.5rem; height: auto; flex: none; }
 
 .text-link {
   width: fit-content;
@@ -1676,11 +1690,11 @@ button:disabled { opacity: .6; cursor: default; }
   margin-top: 1.15rem;
 }
 
-.season-controls { margin-bottom: .85rem; }
+.season-controls { gap: .35rem; margin-bottom: .45rem; }
+.season-controls .chip { min-height: 2rem; padding: .3rem .58rem; font-size: .79rem; }
 
 .calendar-month {
-  margin-bottom: .85rem;
-  padding: clamp(.65rem, 2vw, 1rem);
+  padding: .48rem;
   border: 1px solid #375269;
   border-radius: .6rem;
   background: #10283e;
@@ -1688,36 +1702,36 @@ button:disabled { opacity: .6; cursor: default; }
 
 .calendar-month-nav {
   display: grid;
-  grid-template-columns: 2.65rem minmax(0, 1fr) 2.65rem;
+  grid-template-columns: 1.8rem minmax(0, 1fr) 1.8rem;
   align-items: center;
-  gap: .5rem;
-  margin-bottom: .35rem;
+  gap: .35rem;
+  margin-bottom: .22rem;
   text-align: center;
 }
 
 .calendar-month-nav button {
   display: grid;
   place-content: center;
-  min-height: 2.55rem;
+  min-height: 1.8rem;
   padding: 0;
-  border-radius: .42rem;
-  font-size: 1.65rem;
+  border-radius: .32rem;
+  font-size: 1.3rem;
   line-height: 1;
 }
 
-.calendar-month-nav h3 { font-size: clamp(1.05rem, 2.1vw, 1.35rem); font-weight: 800; line-height: 1.25; }
+.calendar-month-nav h3 { font-size: .92rem; font-weight: 800; line-height: 1.25; }
 
 .calendar-grid {
   width: 100%;
   table-layout: fixed;
-  border-spacing: .2rem .23rem;
+  border-spacing: .12rem .12rem;
   text-align: center;
 }
 
 .calendar-grid th {
-  padding: .3rem 0;
+  padding: .19rem 0;
   color: #b5cfde;
-  font-size: .8rem;
+  font-size: .7rem;
   font-weight: 750;
 }
 
@@ -1727,12 +1741,12 @@ button:disabled { opacity: .6; cursor: default; }
   display: grid;
   place-content: center;
   justify-items: center;
-  gap: .2rem;
+  gap: .12rem;
   width: 100%;
-  min-height: 2.4rem;
-  padding: .18rem 0;
-  border-radius: .38rem;
-  font-size: .9rem;
+  min-height: 1.65rem;
+  padding: .1rem 0;
+  border-radius: .28rem;
+  font-size: .76rem;
   font-weight: 750;
   line-height: 1;
 }
@@ -1743,8 +1757,8 @@ span.calendar-day { color: #c7dce9; }
 
 .calendar-day[data-calendar-date]::after {
   content: "";
-  width: .29rem;
-  height: .29rem;
+  width: .22rem;
+  height: .22rem;
   border-radius: 50%;
   background: currentColor;
 }
@@ -2125,18 +2139,13 @@ span.calendar-day { color: #c7dce9; }
 @media (max-width: 850px) {
   .school-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .athlete-sponsor { grid-template-columns: minmax(0, 1fr); }
-  .calendar-layout {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: "heading" "schedule" "actions";
-  }
   .header-inner { min-height: 4.125rem; }
   .main-nav { gap: 1rem; }
   .header-book { display: none; }
   .hero-inner { grid-template-columns: minmax(0, 1fr); }
   .hero h1 { font-size: clamp(2.55rem, 9.4vw, 4.65rem); }
   .hero-disciplines { width: min(100%, 40rem); }
-  .hero-disciplines span { font-size: clamp(.7rem, 2vw, .88rem); }
+  .hero-disciplines a > span { font-size: clamp(.7rem, 2vw, .88rem); }
 }
 
 @media (max-width: 720px) {
@@ -2220,6 +2229,10 @@ span.calendar-day { color: #c7dce9; }
 }
 
 @media (max-width: 560px) {
+  .calendar-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "heading" "widget" "schedule" "actions";
+  }
   .school-app-figure { grid-template-columns: minmax(0, 1fr); }
   .school-app-scene { display: block; min-height: 0; padding: 0; background: var(--navy); }
   .school-app-scene::before { display: none; }
@@ -2242,8 +2255,8 @@ span.calendar-day { color: #c7dce9; }
   .event-categories { grid-template-columns: 1fr; }
   .hero-inner { padding-block: 1.75rem; }
   .hero-disciplines { gap: .35rem; }
-  .hero-disciplines img { aspect-ratio: 1.22; }
-  .hero-disciplines span { padding-inline: .3rem; padding-bottom: .26rem; }
+  .hero-illustration img { aspect-ratio: 1.22; }
+  .hero-disciplines a > span { padding-inline: .3rem; padding-bottom: .26rem; }
   .hero-actions { align-items: stretch; }
   .hero-actions .button { min-height: 3rem; padding-inline: .8rem; font-size: .875rem; }
   .catalog-empty { padding: 1rem; }
