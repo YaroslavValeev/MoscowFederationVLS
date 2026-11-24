@@ -16,10 +16,10 @@
       .step { fill:#8eeaf5; font:600 19px Manrope,Arial,sans-serif; letter-spacing:1px }
       .heading { fill:#fff; font:600 34px Manrope,Arial,sans-serif; letter-spacing:-1px }
       .body { fill:#d4e9ef; font:500 27px Manrope,Arial,sans-serif }
-      .body-small { fill:#b9dbe5; font:500 24px Manrope,Arial,sans-serif }
+      .body-small { fill:#b9dbe5; font:500 27px Manrope,Arial,sans-serif }
       .route-title { fill:#8eeaf5; font:600 34px Manrope,Arial,sans-serif; letter-spacing:-1px }
-      .route-body { fill:#edf9fc; font:500 26px Manrope,Arial,sans-serif }
-      .tiny { fill:#aed5df; font:500 21px Manrope,Arial,sans-serif }
+      .route-body { fill:#edf9fc; font:500 28px Manrope,Arial,sans-serif }
+      .tiny { fill:#aed5df; font:500 24px Manrope,Arial,sans-serif }
       .line { fill:none; stroke:url(#line); stroke-width:4; stroke-linecap:round }
       .thin { fill:none; stroke:#63d3e3; stroke-width:3; stroke-linecap:round; stroke-linejoin:round }
     </style>
@@ -44,31 +44,31 @@
     <rect class="card" width="318" height="174" rx="22"/>
     <circle cx="40" cy="40" r="23" fill="#63d3e3"/><text x="40" y="47" text-anchor="middle" fill="#082036" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="800">1</text>
     <text class="step" x="78" y="37">СТАРТ</text><text class="heading" x="26" y="92">Школа ФВЛС</text>
-    <text class="body-small" x="26" y="128">Обучение и выбор дисциплины</text><text class="tiny" x="26" y="157">Вода, тяга, техника, команда</text>
+    <text class="body-small" x="26" y="137">Обучение · дисциплина</text>
   </g>
   <g transform="translate(441 235)">
     <rect class="card" width="318" height="174" rx="22"/>
     <circle cx="40" cy="40" r="23" fill="#63d3e3"/><text x="40" y="47" text-anchor="middle" fill="#082036" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="800">2</text>
     <text class="step" x="78" y="37">U15</text><text class="heading" x="26" y="92">Первый старт</text>
-    <text class="body-small" x="26" y="128">II–I юношеские разряды</text><text class="tiny" x="26" y="157">Возраст, дисциплина, норматив</text>
+    <text class="body-small" x="26" y="137">II–I юношеские</text>
   </g>
   <g transform="translate(806 235)">
     <rect class="card" width="318" height="174" rx="22"/>
     <circle cx="40" cy="40" r="23" fill="#63d3e3"/><text x="40" y="47" text-anchor="middle" fill="#082036" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="800">3</text>
     <text class="step" x="78" y="37">U19 · OPEN</text><text class="heading" x="26" y="92">Разряды и КМС</text>
-    <text class="body-small" x="26" y="128">III–I разряды → КМС</text><text class="tiny" x="26" y="157">Первенства и ЕКП</text>
+    <text class="body-small" x="26" y="137">III–I разряды → КМС</text>
   </g>
   <g transform="translate(1171 235)">
     <rect class="card" width="318" height="174" rx="22"/>
     <circle cx="40" cy="40" r="23" fill="#63d3e3"/><text x="40" y="47" text-anchor="middle" fill="#082036" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="800">4</text>
     <text class="step" x="78" y="37">OPEN</text><text class="heading" x="26" y="92">МС и сборная</text>
-    <text class="body-small" x="26" y="128">Кубок и чемпионат России</text><text class="tiny" x="26" y="157">Отбор в команду Москвы</text>
+    <text class="body-small" x="26" y="137">Россия и сборная</text>
   </g>
   <g transform="translate(1536 235)">
     <rect class="card" width="368" height="174" rx="22"/>
     <circle cx="40" cy="40" r="23" fill="#63d3e3"/><text x="40" y="47" text-anchor="middle" fill="#082036" font-family="Manrope,Arial,sans-serif" font-size="25" font-weight="800">5</text>
     <text class="step" x="78" y="37">MASTERS · VETERANS</text><text class="heading" x="26" y="92">Международный уровень</text>
-    <text class="body-small" x="26" y="128">МСМК · Европа · мир</text><text class="tiny" x="26" y="157">ЧМ и Всемирные игры</text>
+    <text class="body-small" x="26" y="137">МСМК · Европа · мир</text>
   </g>
 
   <g transform="translate(76 505)">
