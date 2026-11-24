@@ -9,8 +9,8 @@
   <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/mark.png">
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script src="site.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="site.js?v=3" defer></script>
   <title>ФВЛС Москвы · Воднолыжный спорт</title>
 </head>
 <body id="top">
@@ -47,68 +47,9 @@
             <a class="button button-primary" href="#disciplines">Дисциплины ФВЛС Москва</a>
           </div>
         </div>
-        <ul class="hero-disciplines" role="list" aria-label="Иллюстрации дисциплин ФВЛС Москвы">
-          <li>
-            <a href="#discipline-waterski">
-              <div class="hero-illustration"><img src="assets/hero/waterski.webp?v=3" alt="" width="416" height="416" fetchpriority="high"></div>
-              <span>Водные лыжи</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-cable-ski">
-              <div class="hero-illustration"><img src="assets/hero/cable-ski.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Водные лыжи на электротяге</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-boat-wakeboard">
-              <div class="hero-illustration"><img src="assets/hero/boat-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Вейкборд за катером</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-cable-wakeboard">
-              <div class="hero-illustration"><img src="assets/hero/cable-wakeboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Вейкборд на электротяге</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-wakesurf">
-              <div class="hero-illustration"><img src="assets/hero/wakesurf-wakeskim.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span lang="en">Wakesurf / Wakeskim</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-adaptive">
-              <div class="hero-illustration"><img src="assets/hero/adaptive.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Адаптивные дисциплины</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-show">
-              <div class="hero-illustration"><img src="assets/hero/show.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Воднолыжное шоу</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-longboard">
-              <div class="hero-illustration"><img src="assets/hero/longboard.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Вейк-лонгборд</span>
-            </a>
-          </li>
-          <li>
-            <a href="#discipline-foil">
-              <div class="hero-illustration"><img src="assets/hero/foil.webp?v=3" alt="" width="416" height="416" decoding="async"></div>
-              <span>Вейк-фойл</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <section class="discipline-band" id="disciplines" aria-labelledby="disciplines-title">
-        <div class="container">
+        <section id="disciplines" aria-labelledby="disciplines-title">
           <div class="discipline-title-row">
             <h2 class="discipline-heading" id="disciplines-title">Дисциплины ФВЛС Москва</h2>
-            <a class="text-link" href="#athlete-path">Путь спортсмена</a>
           </div>
           <ul class="discipline-grid" role="list">
             <li>
@@ -203,7 +144,10 @@
               </li>
             </ul>
           </div>
-
+        </section>
+      </div>
+      <div class="discipline-band">
+        <div class="container">
           <section class="athlete-path" id="athlete-path" aria-labelledby="athlete-path-title">
             <div class="athlete-path-heading">
               <img src="assets/athlete-path/waterski.png" alt="" width="64" height="64" loading="lazy" decoding="async">
@@ -626,7 +570,7 @@
                 </div>
               </div>
             </details>
-          </section>
+          </div>
         </div>
       </section>
     </section>
@@ -697,7 +641,7 @@
             </figure>
           </section>
 
-          <div class="school-grid">
+          <div class="school-grid" hidden>
             <details class="school-venue" name="school-venues" id="sportstation">
               <summary>SportStation</summary>
               <div class="school-venue-body">
@@ -803,27 +747,23 @@
           <p id="venue-count" class="sr-only" role="status"></p>
           <div class="venue-grid" id="venue-grid">
             <article class="venue" id="fenix" data-venue data-disciplines="ski board surf skim" data-trial-venue>
-              <div class="venue-image">
-                <img src="assets/water-ski.webp" alt="" width="700" height="467" loading="lazy" decoding="async">
-                <span class="venue-tag" data-venue-discipline>Водные лыжи</span>
-              </div>
               <div class="venue-body">
-                <p class="venue-area"><span class="icon icon-pin" aria-hidden="true"></span>Хорошёво-Мнёвники</p>
                 <h4 data-venue-name>Вейк-клуб Fenix</h4>
-                <p class="venue-address" data-venue-address>Карамышевская набережная, 13, стр. 2</p>
-                <p class="venue-description" data-venue-description>Водные лыжи, вейкборд, вейксерф и WakeSkim. Занятия с инструктором для детей и взрослых.</p>
-                <p class="venue-schedule"><span class="icon icon-clock" aria-hidden="true"></span><span data-venue-schedule>Открытая вода, время по записи</span></p>
+                <p class="venue-description"><span data-venue-address>Карамышевская набережная, 13, стр. 2</span> · Хорошёво-Мнёвники<br>Водные лыжи, вейкборд, вейксерф и WakeSkim.</p>
                 <a class="venue-action" href="https://wakeschool.ru/zapisatsya-na-zanyatiya" data-venue-action data-primary-label="Перейти к записи в Fenix" aria-label="Расписание и запись, вейк-клуб Fenix">Расписание и запись</a>
+                <span data-venue-discipline hidden>Водные лыжи</span>
+                <span data-venue-description hidden>Водные лыжи, вейкборд, вейксерф и WakeSkim. Занятия с инструктором для детей и взрослых.</span>
+                <span data-venue-schedule hidden>Открытая вода, время по записи</span>
                 <a href="tel:+79031762708" data-venue-phone hidden>+7 (903) 176-27-08</a>
                 <a href="https://wakeschool.ru/waterskiing" data-venue-source hidden>Уроки на водных лыжах</a>
               </div>
             </article>
-            <aside class="school-note" id="city-school" aria-labelledby="city-school-title">
-              <div>
+            <aside class="venue" id="city-school" aria-labelledby="city-school-title">
+              <div class="venue-body">
                 <h4 id="city-school-title">Воднолыжный спорт в городской спортшколе</h4>
-                <p>Московская академия парусного и гребных видов спорта публикует условия поступления и информацию о наборе.</p>
+                <p class="venue-description">Московская академия парусного и гребных видов спорта публикует условия поступления и информацию о наборе.</p>
+                <a class="venue-action" href="https://msra.mossport.ru/regtoschool/">Узнать о наборе</a>
               </div>
-              <a class="text-link" href="https://msra.mossport.ru/regtoschool/">Узнать о наборе</a>
             </aside>
           </div>
           <div class="catalog-empty" id="catalog-empty" hidden>

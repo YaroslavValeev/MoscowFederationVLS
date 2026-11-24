@@ -230,60 +230,10 @@ button:disabled { opacity: .6; cursor: default; }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: minmax(0, .82fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr);
   align-items: center;
-  gap: clamp(1.5rem, 3.4vw, 3.5rem);
+  gap: clamp(1rem, 2vw, 2rem);
   padding-block: clamp(2.25rem, 3.8vw, 3.5rem);
-}
-
-.hero-disciplines {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hero-disciplines a {
-  isolation: isolate;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid #4f768b;
-  border-radius: .5rem;
-  background: var(--navy-raised);
-}
-
-.hero-illustration {
-  background: var(--aqua);
-  mix-blend-mode: screen;
-}
-
-.hero-illustration img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1.4;
-  object-fit: contain;
-  background: #fdf7ec;
-  filter: grayscale(1) brightness(.82) contrast(2.05) invert(1);
-  mix-blend-mode: multiply;
-}
-
-.hero-disciplines a:hover { border-color: var(--aqua); }
-
-.hero-disciplines a > span {
-  display: grid;
-  align-content: center;
-  padding: .34rem .5rem .38rem;
-  border-top: 1px solid #345b72;
-  background: #16354a;
-  font-size: clamp(.68rem, 1.16vw, .88rem);
-  font-weight: 800;
-  line-height: 1.23;
-  overflow-wrap: anywhere;
 }
 
 .eyebrow {
@@ -314,7 +264,7 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .hero h1 {
-  font-size: clamp(2.9rem, 5.05vw, 5rem);
+  font-size: clamp(2.15rem, 3.42vw, 3.1rem);
   font-weight: 800;
   letter-spacing: -.075em;
   line-height: 1.005;
@@ -346,16 +296,7 @@ button:disabled { opacity: .6; cursor: default; }
   background: radial-gradient(ellipse at 84% 5%, #15394e, #0b2035 70%);
 }
 
-.discipline-title-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: .6rem 1.5rem;
-  margin-bottom: 1.15rem;
-}
-
-.discipline-title-row .text-link { color: var(--aqua); font-size: .925rem; }
+.discipline-title-row { margin-bottom: 1.15rem; }
 
 .discipline-heading {
   font-size: clamp(1.65rem, 3.65vw, 2.8rem);
@@ -462,9 +403,6 @@ button:disabled { opacity: .6; cursor: default; }
 
 .athlete-path {
   --path-column-gap: clamp(2rem, 5vw, 5rem);
-  margin-top: clamp(2rem, 5vw, 4rem);
-  padding-top: clamp(1.75rem, 4vw, 3rem);
-  border-top: 1px solid #345268;
   color: var(--white);
 }
 
@@ -506,6 +444,7 @@ button:disabled { opacity: .6; cursor: default; }
 .athlete-tree {
   position: relative;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto 1fr;
   align-items: start;
   row-gap: 1.6rem;
   margin-top: 2.6rem;
@@ -1447,7 +1386,9 @@ button:disabled { opacity: .6; cursor: default; }
 .venue-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: clamp(1rem, 2vw, 1.65rem);
+  max-inline-size: 46rem;
 }
 
 .venue {
@@ -1460,43 +1401,14 @@ button:disabled { opacity: .6; cursor: default; }
   box-shadow: 0 9px 26px #10294008;
 }
 
-.venue-image {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1.9;
-  background: #b8dce8;
-}
-
-.venue-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 49%;
-}
-
-.venue-tag {
-  position: absolute;
-  top: .85rem;
-  left: .85rem;
-  padding: .4rem .6rem;
-  border-radius: .34rem;
-  background: var(--white);
-  color: var(--deep-blue);
-  font-size: .875rem;
-  line-height: 1.2;
-  font-weight: 800;
-}
-
 .venue-body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: flex-start;
-  padding: clamp(1rem, 1.75vw, 1.5rem);
+  gap: .45rem;
+  padding: .8rem .9rem;
 }
 
-.venue-area,
-.venue-schedule,
 .booking-schedule {
   display: flex;
   align-items: baseline;
@@ -1506,8 +1418,6 @@ button:disabled { opacity: .6; cursor: default; }
   font-weight: 750;
 }
 
-.venue-area { margin-bottom: .55rem; color: var(--deep-blue); }
-
 .icon {
   display: inline-block;
   position: relative;
@@ -1516,25 +1426,6 @@ button:disabled { opacity: .6; cursor: default; }
   width: 1rem;
   height: 1rem;
   margin-top: .15rem;
-}
-
-.icon-pin::before {
-  content: "";
-  position: absolute;
-  inset: 1px 3px 3px 2px;
-  border: 1.5px solid currentColor;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-}
-
-.icon-pin::after {
-  content: "";
-  position: absolute;
-  inset: 5px auto auto 6px;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: currentColor;
 }
 
 .icon-search::before, .icon-search::after {
@@ -1575,10 +1466,10 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .venue h4 {
-  font-size: clamp(1.25rem, 1.86vw, 1.66rem);
+  font-size: 1.1rem;
   font-weight: 800;
-  line-height: 1.16;
-  letter-spacing: -.045em;
+  line-height: 1.22;
+  letter-spacing: -.02em;
 }
 
 .venue-address {
@@ -1589,46 +1480,24 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .venue-description {
-  margin-top: .75rem;
-  margin-bottom: .85rem;
-  line-height: 1.52;
-  font-size: 1rem;
-}
-
-.venue-schedule {
-  margin-top: auto;
-  padding-top: .85rem;
-  border-top: 1px solid var(--line);
-  width: 100%;
   color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.45;
 }
 
 .venue-action {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.75rem;
-  padding: .45rem .7rem;
-  margin-top: .85rem;
+  min-height: 2.4rem;
+  padding: .35rem .55rem;
+  margin-top: auto;
   width: 100%;
   text-align: center;
   border-radius: .45rem;
-  font-size: .925rem;
+  font-size: .875rem;
   font-weight: 800;
 }
-
-.school-note {
-  display: grid;
-  align-self: start;
-  gap: .75rem;
-  padding: 1rem clamp(1rem, 2.2vw, 1.5rem);
-  border: 1px solid var(--line);
-  border-radius: .65rem;
-  background: #eaf4f9;
-}
-
-.school-note h4 { font-size: clamp(1.05rem, 1.75vw, 1.35rem); font-weight: 800; line-height: 1.3; }
-.school-note p { margin-top: .25rem; color: var(--muted); line-height: 1.55; }
 
 .catalog-note {
   margin-top: 1rem;
@@ -2127,8 +1996,13 @@ span.calendar-day { color: #c7dce9; }
   .school-app-banner { grid-template-columns: minmax(0, 1fr); }
 }
 
+@media (max-width: 1000px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero h1 { font-size: clamp(2.55rem, 9.4vw, 4.65rem); }
+}
+
 @media (max-width: 900px) {
-  .athlete-tree { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; margin-top: 1.55rem; }
+  .athlete-tree { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 1.7rem; margin-top: 1.55rem; }
   .athlete-ranks { grid-row: auto; }
   .athlete-coach { grid-column: auto; }
   .athlete-tree::before, .athlete-tree::after { display: none; }
@@ -2142,10 +2016,6 @@ span.calendar-day { color: #c7dce9; }
   .header-inner { min-height: 4.125rem; }
   .main-nav { gap: 1rem; }
   .header-book { display: none; }
-  .hero-inner { grid-template-columns: minmax(0, 1fr); }
-  .hero h1 { font-size: clamp(2.55rem, 9.4vw, 4.65rem); }
-  .hero-disciplines { width: min(100%, 40rem); }
-  .hero-disciplines a > span { font-size: clamp(.7rem, 2vw, .88rem); }
 }
 
 @media (max-width: 720px) {
@@ -2254,9 +2124,6 @@ span.calendar-day { color: #c7dce9; }
   .spotmap-copy { max-width: none; padding: 1rem; }
   .event-categories { grid-template-columns: 1fr; }
   .hero-inner { padding-block: 1.75rem; }
-  .hero-disciplines { gap: .35rem; }
-  .hero-illustration img { aspect-ratio: 1.22; }
-  .hero-disciplines a > span { padding-inline: .3rem; padding-bottom: .26rem; }
   .hero-actions { align-items: stretch; }
   .hero-actions .button { min-height: 3rem; padding-inline: .8rem; font-size: .875rem; }
   .catalog-empty { padding: 1rem; }

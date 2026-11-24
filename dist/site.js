@@ -89,13 +89,17 @@ if (filtersEnabled) {
   filterVenues();
 }
 
-function openLinkedSchoolVenue() {
-  const venue = document.getElementById(window.location.hash.slice(1));
-  if (venue?.matches('details.school-venue')) venue.open = true;
-}
+function watchSchoolVenueLinks(openHiddenVenue) {
+  function openLinkedSchoolVenue() {
+    const venue = document.getElementById(window.location.hash.slice(1));
+    if (!venue?.matches('details.school-venue')) return;
+    if (venue.closest('.school-grid[hidden]')) openHiddenVenue?.(venue.id);
+    else venue.open = true;
+  }
 
-openLinkedSchoolVenue();
-window.addEventListener('hashchange', openLinkedSchoolVenue);
+  openLinkedSchoolVenue();
+  window.addEventListener('hashchange', openLinkedSchoolVenue);
+}
 
 function initCalendar() {
   const calendar = document.querySelector('#calendar');
@@ -264,11 +268,8 @@ if (typeof dialog.showModal === 'function') {
     phone.textContent = venue.phone.textContent;
   }
 
-  function openBooking(event, venue) {
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const trigger = event.currentTarget;
-    returnFocus = trigger.classList.contains('mobile-book') ? menuToggle : trigger;
+  function showBooking(venue, trigger) {
+    returnFocus = trigger?.classList.contains('mobile-book') ? menuToggle : trigger;
     title.textContent = venue ? 'Расписание и запись' : 'Пробное занятие';
     intro.hidden = Boolean(venue);
     picker.hidden = Boolean(venue);
@@ -278,12 +279,25 @@ if (typeof dialog.showModal === 'function') {
     if (!venue) options.focus();
   }
 
+  function openBooking(event, venue) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    showBooking(venue, event.currentTarget);
+  }
+
   options.addEventListener('change', () => showVenue(venueDetails.get(options.value)));
   document.querySelectorAll('[data-trial]').forEach(trigger => {
     trigger.addEventListener('click', event => openBooking(event));
   });
   venueDetails.forEach(venue => {
     venue.action.addEventListener('click', event => openBooking(event, venue));
+  });
+  document.querySelectorAll('#disciplines .discipline-card[href^="#"]').forEach(link => {
+    const target = document.getElementById(link.hash.slice(1));
+    const venue = venueDetails.get(target?.id);
+    if (venue && target.closest('.school-grid[hidden]')) {
+      link.addEventListener('click', event => openBooking(event, venue));
+    }
   });
   goToCatalog.addEventListener('click', () => {
     returnFocus = null;
@@ -295,4 +309,10 @@ if (typeof dialog.showModal === 'function') {
     if (event.target === dialog) dialog.close();
   });
   dialog.addEventListener('close', () => returnFocus?.focus({ preventScroll: true }));
+  watchSchoolVenueLinks(id => {
+    const venue = venueDetails.get(id);
+    if (venue && !dialog.open) showBooking(venue);
+  });
+} else {
+  watchSchoolVenueLinks();
 }
