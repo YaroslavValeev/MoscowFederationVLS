@@ -431,16 +431,13 @@ button:disabled { opacity: .6; cursor: default; }
 }
 
 .athlete-roadmap a { display: block; }
+.athlete-roadmap picture { display: block; }
 
 .athlete-roadmap img {
   display: block;
   width: 100%;
   height: auto;
-  transition: transform .2s ease;
 }
-
-.athlete-roadmap a:hover img,
-.athlete-roadmap a:focus-visible img { transform: scale(1.012); }
 
 .athlete-roadmap figcaption {
   padding: .55rem .85rem .6rem;
