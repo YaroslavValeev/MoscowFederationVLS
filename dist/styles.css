@@ -184,13 +184,6 @@ button:disabled { opacity: .6; cursor: default; }
   text-align: center;
 }
 
-.header-book {
-  min-height: 2.625rem;
-  padding-inline: 1rem;
-  font-size: .875rem;
-  flex: none;
-}
-
 .menu-toggle {
   display: none;
   width: 2.75rem;
@@ -231,10 +224,12 @@ button:disabled { opacity: .6; cursor: default; }
 .hero-inner {
   display: grid;
   grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr);
-  align-items: center;
+  align-items: start;
   gap: clamp(1rem, 2vw, 2rem);
   padding-block: clamp(2.25rem, 3.8vw, 3.5rem);
 }
+
+.hero-copy { padding-top: .35rem; }
 
 .eyebrow {
   font-size: .875rem;
@@ -290,13 +285,15 @@ button:disabled { opacity: .6; cursor: default; }
   margin-top: 1.85rem;
 }
 
+.hero-actions .button { width: 100%; min-height: 3.5rem; }
+
 .discipline-band {
   padding-block: clamp(2rem, 4vw, 3.75rem);
   border-top: 1px solid #324c62;
   background: radial-gradient(ellipse at 84% 5%, #15394e, #0b2035 70%);
 }
 
-.discipline-title-row { margin-bottom: 1.15rem; }
+.discipline-title-row { margin-bottom: 1.15rem; text-align: center; }
 
 .discipline-heading {
   font-size: clamp(1.65rem, 3.65vw, 2.8rem);
@@ -423,31 +420,141 @@ button:disabled { opacity: .6; cursor: default; }
 .athlete-roadmap {
   width: min(100%, 74rem);
   margin: clamp(1.35rem, 3.4vw, 2.4rem) auto 0;
-  overflow: hidden;
+  padding: clamp(1rem, 3vw, 2rem);
   border: 1px solid #41677c;
   border-radius: 1rem;
-  background: #10161a;
+  background: radial-gradient(ellipse at 86% 4%, #1a4860 0, #102f46 34%, #0b2238 78%);
   box-shadow: 0 1.1rem 2.6rem rgb(0 0 0 / 22%);
 }
 
-.athlete-roadmap a { display: block; }
-.athlete-roadmap picture { display: block; }
-
-.athlete-roadmap img {
-  display: block;
-  width: 100%;
-  height: auto;
+.roadmap-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  align-items: center;
+  gap: 1.1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #41677c;
 }
+
+.roadmap-kicker {
+  color: #8ee6f3;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.roadmap-intro h4 {
+  margin-top: .35rem;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.roadmap-intro p:not(.roadmap-kicker) {
+  margin-top: .55rem;
+  color: #d9ebf2;
+  font-size: .95rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.roadmap-intro p.roadmap-goal { color: #9debf5; font-size: .85rem; }
+.roadmap-art { display: block; width: 100%; height: auto; object-fit: contain; }
+.roadmap-section { margin-top: 1.3rem; }
+
+.roadmap-section-heading { display: flex; align-items: center; gap: .6rem; }
+.roadmap-section-heading img { width: 2.25rem; height: 2.25rem; flex: none; }
+.roadmap-section-heading h5,
+.roadmap-route h5 {
+  margin: 0;
+  color: #f7fcff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.roadmap-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .55rem;
+  margin: .8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap-steps li {
+  min-width: 0;
+  min-height: 6.4rem;
+  padding: .7rem .75rem;
+  border: 1px solid #39667c;
+  border-radius: .65rem;
+  background: #12354c;
+}
+
+.roadmap-steps span,
+.roadmap-steps strong,
+.roadmap-steps small { display: block; }
+
+.roadmap-steps span { color: #8ee6f3; font-size: .76rem; font-weight: 600; }
+.roadmap-steps strong { margin-top: .3rem; font-size: .95rem; font-weight: 600; line-height: 1.3; }
+.roadmap-steps small { margin-top: .24rem; color: #cbe1ea; font-size: .875rem; font-weight: 400; line-height: 1.4; }
+
+.roadmap-competition,
+.roadmap-disciplines,
+.roadmap-documentation {
+  padding: .85rem 1rem;
+  border: 1px solid #39667c;
+  border-radius: .65rem;
+  background: #0d2b40;
+}
+
+.roadmap-competition > p,
+.roadmap-disciplines > p,
+.roadmap-documentation > p { margin: .6rem 0 0; color: #e4f3f7; font-size: .94rem; font-weight: 400; line-height: 1.6; }
+.roadmap-competition > p span,
+.roadmap-documentation > p span { padding-inline: .12rem; color: #8ee6f3; }
+.roadmap-competition > p.roadmap-note { margin-top: .4rem; color: #bad4de; font-size: .85rem; }
+
+.roadmap-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .65rem;
+  margin-top: .9rem;
+}
+
+.roadmap-route {
+  min-width: 0;
+  padding: .85rem;
+  border: 1px solid #51889c;
+  border-radius: .65rem;
+  background: #12354c;
+}
+
+.roadmap-route img { width: 2rem; height: 2rem; }
+.roadmap-route h5 { margin-top: .4rem; color: #9debf5; }
+.roadmap-route p { margin-top: .45rem; color: #e2f1f5; font-size: .9rem; font-weight: 400; line-height: 1.55; }
 
 .athlete-roadmap figcaption {
-  padding: .55rem .85rem .6rem;
-  color: #c4eaf2;
-  font-size: .83rem;
-  line-height: 1.4;
-  text-align: center;
-  border-top: 1px solid rgb(91 212 231 / 32%);
-  background: #102538;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: .9rem;
+  padding: .8rem 1rem;
+  border: 1px solid #39667c;
+  border-radius: .65rem;
+  background: #0c2a40;
+  color: #d6ebf1;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
+
+.athlete-roadmap figcaption img { flex: none; width: 2rem; height: 2rem; }
+.athlete-roadmap figcaption strong { color: #f7fcff; font-weight: 600; }
+.athlete-commercial-intro { margin-top: .8rem; color: #dceef4; font-size: .925rem; line-height: 1.55; }
 
 .athlete-jumps {
   display: flex;
@@ -2041,7 +2148,6 @@ span.calendar-day { color: #c7dce9; }
 
 @media (max-width: 520px) {
   .athlete-roadmap { margin-top: 1.2rem; border-radius: .75rem; }
-  .athlete-roadmap figcaption { padding-inline: .65rem; font-size: .78rem; }
 }
 
 @media (max-width: 850px) {
@@ -2049,10 +2155,13 @@ span.calendar-day { color: #c7dce9; }
   .athlete-sponsor { grid-template-columns: minmax(0, 1fr); }
   .header-inner { min-height: 4.125rem; }
   .main-nav { gap: 1rem; }
-  .header-book { display: none; }
 }
 
 @media (max-width: 720px) {
+  .roadmap-intro { grid-template-columns: 1fr; gap: .5rem; }
+  .roadmap-art { max-width: 28rem; margin-inline: auto; }
+  .roadmap-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roadmap-routes { grid-template-columns: 1fr; }
   .school-app-scene { min-height: clamp(13rem, 48vw, 18rem); }
   .discipline-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .discipline-wide { grid-column: 1 / -1; }
@@ -2159,9 +2268,14 @@ span.calendar-day { color: #c7dce9; }
   .event-categories { grid-template-columns: 1fr; }
   .hero-inner { padding-block: 1.75rem; }
   .hero-actions { align-items: stretch; }
-  .hero-actions .button { min-height: 3rem; padding-inline: .8rem; font-size: .875rem; }
+  .hero-actions .button { min-height: 3.5rem; padding-inline: .8rem; font-size: .95rem; }
   .catalog-empty { padding: 1rem; }
   .footer-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+  .roadmap-steps { grid-template-columns: 1fr; }
+  .roadmap-steps li { min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

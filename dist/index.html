@@ -9,7 +9,7 @@
   <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/mark.png">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=31">
   <script src="site.js?v=3" defer></script>
   <title>ФВЛС Москвы · Воднолыжный спорт</title>
 </head>
@@ -31,7 +31,6 @@
         <a href="#contacts">Контакты</a>
         <a class="button button-primary mobile-book" href="#trial" data-trial>На пробное занятие</a>
       </nav>
-      <a class="button header-book" href="#trial" data-trial>На пробное занятие</a>
     </div>
   </header>
 
@@ -44,7 +43,6 @@
           <p class="hero-intro">Найдите секцию, проверьте расписание и запишитесь на первое занятие.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#trial" data-trial>На пробное занятие</a>
-            <a class="button button-primary" href="#disciplines">Дисциплины ФВЛС Москва</a>
           </div>
         </div>
         <section id="disciplines" aria-labelledby="disciplines-title">
@@ -126,7 +124,7 @@
             </li>
           </ul>
           <div class="discipline-extras">
-            <h3>Дополнительные направления</h3>
+            <h3>Могут войти в семью ФВЛС</h3>
             <ul class="discipline-extra-grid" role="list">
               <li>
                 <a class="discipline-card discipline-card--extra" id="discipline-longboard" href="#loaded" aria-label="Вейк-лонгборд на площадке LOADED">
@@ -159,14 +157,67 @@
               </div>
             </div>
 
-            <figure class="athlete-roadmap">
-              <a href="assets/athlete-path/fvls-athlete-roadmap.svg?v=30" target="_blank" rel="noopener" aria-label="Открыть инфографику «Путь спортсмена ФВЛС» в полном размере">
-                <picture>
-                  <source media="(max-width: 720px)" srcset="assets/athlete-path/fvls-athlete-roadmap-mobile.svg?v=30">
-                  <img src="assets/athlete-path/fvls-athlete-roadmap.svg?v=30" alt="Инфографика «Путь спортсмена ФВЛС»: от школы, дисциплин и первых стартов до разрядов, сборной, международных соревнований, коммерческого, судейского и тренерского путей." width="1980" height="1120" loading="lazy" decoding="async">
-                </picture>
-              </a>
-              <figcaption>Схема пути спортсмена ФВЛС. Нажмите, чтобы открыть её в полном размере.</figcaption>
+            <figure class="athlete-roadmap" aria-labelledby="roadmap-title">
+              <div class="roadmap-intro">
+                <div>
+                  <p class="roadmap-kicker">ФВЛС Москвы · карта возможностей</p>
+                  <h4 id="roadmap-title">Путь спортсмена ФВЛС</h4>
+                  <p>От первых занятий и соревнований — к спортивным достижениям и новым возможностям.</p>
+                  <p class="roadmap-goal">Brisbane 2032 · стратегическая цель</p>
+                </div>
+                <img class="roadmap-art" src="assets/athlete-path/roadmap-water-sports.png" alt="" width="2172" height="724" loading="lazy" decoding="async">
+              </div>
+
+              <div class="roadmap-section">
+                <div class="roadmap-section-heading"><img src="assets/athlete-path/waterski.png" alt="" width="40" height="40" loading="lazy"><h5>От школы до сборной</h5></div>
+                <ol class="roadmap-steps">
+                  <li><span>01</span><strong>Школа ФВЛС</strong><small>Знакомство с водой</small></li>
+                  <li><span>02</span><strong>Обучение</strong><small>Техника и тренировки</small></li>
+                  <li><span>03</span><strong>Выбор дисциплины</strong><small>Лыжи, вейкборд, вейксерф</small></li>
+                  <li><span>04</span><strong>Первый старт</strong><small>Опыт соревнований</small></li>
+                  <li><span>05</span><strong>Юношеские разряды</strong><small>II и I юношеские</small></li>
+                  <li><span>06</span><strong>Спортивные разряды</strong><small>III, II, I и КМС</small></li>
+                  <li><span>07</span><strong>Мастер спорта</strong><small>МС и отбор в сборную</small></li>
+                  <li><span>08</span><strong>Международный уровень</strong><small>МСМК и старты IWWF</small></li>
+                </ol>
+              </div>
+
+              <div class="roadmap-section roadmap-disciplines">
+                <div class="roadmap-section-heading"><img src="assets/disciplines/waterski.png" alt="" width="40" height="40" loading="lazy"><h5>Выбор дисциплины</h5></div>
+                <p>Слалом · фигуры · прыжки с трамплина · многоборье · вейкборд за катером и на электротяге · вейксерф · скиджоринг</p>
+              </div>
+
+              <div class="roadmap-section roadmap-competition">
+                <div class="roadmap-section-heading"><img src="assets/athlete-path/flag.png" alt="" width="40" height="40" loading="lazy"><h5>Соревнования и отбор</h5></div>
+                <p>Город <span aria-hidden="true">→</span> регион <span aria-hidden="true">→</span> межрегиональные старты и ЕКП <span aria-hidden="true">→</span> Кубок и чемпионат России <span aria-hidden="true">→</span> первенство и чемпионат Европы <span aria-hidden="true">→</span> мир и Всемирные игры</p>
+                <p class="roadmap-note">Возрастные и открытые категории: U15, U19, Open, Masters, Veterans — в зависимости от положения старта.</p>
+                <p class="roadmap-note">Возраст, дисциплину и условия присвоения разряда проверяйте по действующей ЕВСК и положению соревнований.</p>
+              </div>
+
+              <div class="roadmap-section roadmap-documentation">
+                <div class="roadmap-section-heading"><img src="assets/athlete-path/protocol.png" alt="" width="40" height="40" loading="lazy"><h5>Оформление результата</h5></div>
+                <p>Допуск и протокол <span aria-hidden="true">→</span> представление <span aria-hidden="true">→</span> приказ о присвоении <span aria-hidden="true">→</span> подтверждение звания и знак при наличии права. Отбор в сборную и выплаты зависят от установленных условий.</p>
+              </div>
+
+              <div class="roadmap-routes" aria-label="Другие направления развития">
+                <div class="roadmap-route">
+                  <img src="assets/athlete-path/protocol.png" alt="" width="36" height="36" loading="lazy">
+                  <h5>Коммерческий путь</h5>
+                  <p>Портфолио → партнёр → бартер или гонорар → спецпроекты → отчёт о результатах</p>
+                </div>
+                <div class="roadmap-route">
+                  <img src="assets/athlete-path/medal.png" alt="" width="36" height="36" loading="lazy">
+                  <h5>Судейский путь</h5>
+                  <p>Судья III → II → I категории → всероссийская категория → международная практика</p>
+                </div>
+                <div class="roadmap-route">
+                  <img src="assets/athlete-path/target.png" alt="" width="36" height="36" loading="lazy">
+                  <h5>Тренерский путь</h5>
+                  <p>Тренер → II → I → высшая категория → старший тренер → тренер сборной → Заслуженный тренер России</p>
+                </div>
+              </div>
+
+              <figcaption><img src="assets/athlete-path/podium.png" alt="" width="36" height="36" loading="lazy"><span><strong>Признание заслуг</strong> · ЗМС, Почётный мастер спорта России, Медаль Николая Озерова и Орден Почёта присваиваются или вручаются при выполнении установленных условий.</span></figcaption>
             </figure>
 
             <div class="athlete-tree">
@@ -300,11 +351,12 @@
                   <img src="assets/athlete-path/protocol.png" alt="" width="44" height="44" loading="lazy" decoding="async">
                   Коммерческий путь
                 </h4>
+                <p class="athlete-commercial-intro">Чтобы заинтересовать партнёра, подготовьте портфолио и план сотрудничества. Мы рекомендуем действовать по этим шагам.</p>
                 <ol class="athlete-stages" role="list" aria-label="Работа со спонсорами">
-                  <li><strong>Что нужно спонсору</strong><p>Доступ к подходящей аудитории, контент с экипировкой, участие в событиях и отчёт по охвату или заявкам.</p></li>
-                  <li><strong>Что получает спортсмен</strong><p>Гонорар, экипировку, время тренировок или оплату поездок. Для бартера согласуйте стоимость поддержки, объём контента, сроки и права на публикацию.</p></li>
-                  <li><strong>Бонус за место или разряд</strong><p>Пропишите уровень турнира и сумму за каждое место. Для бонуса за разряд укажите нужную квалификацию и подтверждение приказом о присвоении.</p></li>
-                  <li><strong>Спортивная зарплата</strong><p>Оклад и премии спортсмена определяют трудовой договор и система оплаты работодателя. Условия повышения за результат или новый разряд фиксируются там же. <a class="text-link" href="#athlete-salary">Коэффициенты Москомспорта</a></p></li>
+                  <li><strong>Покажите ценность для спонсора</strong><p>Опишите свою аудиторию и предложите партнёру контент с экипировкой, участие в событиях и отчёт по охвату или заявкам.</p></li>
+                  <li><strong>Согласуйте вашу поддержку</strong><p>Обсудите гонорар, экипировку, время тренировок или оплату поездок. Для бартера зафиксируйте стоимость поддержки, объём контента, сроки и права на публикацию.</p></li>
+                  <li><strong>Зафиксируйте бонус за результат</strong><p>Запишите уровень турнира и сумму за каждое место. Для бонуса за разряд укажите нужную квалификацию и подтверждение приказом о присвоении.</p></li>
+                  <li><strong>Проверьте условия зарплаты</strong><p>Сверьте оклад, премии и условия повышения за результат или разряд с трудовым договором и системой оплаты работодателя. <a class="text-link" href="#athlete-salary">Коэффициенты Москомспорта</a></p></li>
                 </ol>
                 <a class="text-link athlete-path-link" href="#athlete-commercial">Пример расчёта спонсорских выплат</a>
               </div>
