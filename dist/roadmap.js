@@ -101,7 +101,7 @@ function initRoadmapViewer() {
     link.href = item.href;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.title = `${item.label} — открыть ${item.kind}`;
+    link.title = `${item.label} — открыть ${item.kind === 'документ' ? 'документ' : 'страницу'}`;
     link.setAttribute('aria-label', link.title);
     Object.assign(link.style, { left: `${left}%`, top: `${top}%`, width: `${width}%`, height: `${height}%` });
     overlay.append(link);
