@@ -700,9 +700,26 @@ details[open] > .athlete-ranks-toggle::after { content: "−"; }
 }
 
 .athlete-howto h4 { font-size: clamp(1.22rem, 2.7vw, 1.65rem); }
-.athlete-howto-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; }
+.athlete-howto-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: .65rem; }
 .athlete-howto-grid > li { display: grid; align-content: start; gap: .35rem; padding: .8rem; border: 1px solid #456176; border-radius: .55rem; }
 .athlete-goal-step { grid-column: 1 / -1; }
+.athlete-disclosure-toggle, .athlete-sub-toggle, .athlete-step-toggle, .calendar-disclosure-toggle {
+  display: flex; align-items: center; justify-content: space-between; gap: .75rem; cursor: pointer; list-style: none;
+}
+.athlete-disclosure-toggle::-webkit-details-marker, .athlete-sub-toggle::-webkit-details-marker,
+.athlete-step-toggle::-webkit-details-marker, .calendar-disclosure-toggle::-webkit-details-marker { display: none; }
+.athlete-disclosure-toggle::after, .athlete-sub-toggle::after, .athlete-step-toggle::after, .calendar-disclosure-toggle::after {
+  content: '+'; flex: none; color: var(--aqua); font-size: 1.5rem; font-weight: 400; line-height: 1;
+}
+details[open] > .athlete-disclosure-toggle::after, details[open] > .athlete-sub-toggle::after,
+details[open] > .athlete-step-toggle::after, details[open] > .calendar-disclosure-toggle::after { content: '−'; }
+.athlete-disclosure-toggle { padding: .75rem .9rem; border: 1px solid #63d3e3; border-radius: .6rem; }
+.athlete-step-toggle { justify-content: flex-start; }
+.athlete-step-toggle img { width: 2rem; height: 2rem; flex: none; }
+.athlete-step-toggle strong { flex: 1; }
+.athlete-step-content { display: grid; gap: .45rem; margin-top: .75rem; }
+.athlete-sub-toggle h5 { flex: 1; }
+.athlete-disclosure-toggle:focus-visible, .athlete-sub-toggle:focus-visible, .athlete-step-toggle:focus-visible, .calendar-disclosure-toggle:focus-visible { outline: 2px solid #9ee6f4; outline-offset: 3px; }
 .athlete-evsk-links {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -740,6 +757,13 @@ details[open] > .athlete-ranks-toggle::after { content: "−"; }
 .evsk-table thead th { color: #9ee6f4; }
 .evsk-table th:first-child { min-width: 7rem; }
 .evsk-result .text-link { display: inline-block; margin-top: .55rem; }
+.evsk-rank-groups { display: grid; gap: .4rem; margin-top: .75rem; }
+.evsk-rank-group { min-width: 0; padding: .65rem .7rem; border: 1px solid #456176; border-radius: .45rem; }
+.evsk-rank-group summary { display: flex; align-items: center; justify-content: space-between; gap: .5rem; color: #f7fcff; font-weight: 700; cursor: pointer; list-style: none; }
+.evsk-rank-group summary::-webkit-details-marker { display: none; }
+.evsk-rank-group summary::after { content: '+'; color: var(--aqua); font-size: 1.3rem; line-height: 1; }
+.evsk-rank-group[open] summary::after { content: '−'; }
+.evsk-rank-group summary:focus-visible { outline: 2px solid #9ee6f4; outline-offset: 3px; }
 .evsk-calendar-link { justify-self: start; margin-top: .5rem; font-size: .88rem; }
 
 .athlete-map {
@@ -853,11 +877,12 @@ details[open] > .athlete-ranks-toggle::after { content: "−"; }
 .athlete-benefit-grid, .athlete-sponsor {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 1rem;
   margin-top: .85rem;
 }
 
-.athlete-benefit-grid > div, .athlete-sponsor, .athlete-competition-awards {
+.athlete-benefit-grid > div, .athlete-benefit-grid > details, .athlete-sponsor, .athlete-competition-awards {
   padding: clamp(.9rem, 2vw, 1.3rem);
   border: 1px solid #456176;
   border-radius: .65rem;
@@ -1564,20 +1589,27 @@ details[open] > .athlete-ranks-toggle::after { content: "−"; }
 .venue-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
+  align-items: start;
   gap: clamp(1rem, 2vw, 1.65rem);
   max-inline-size: 46rem;
+  margin-bottom: 1.65rem;
 }
 
 .venue {
-  display: flex;
-  flex-direction: column;
+  display: block;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: .8rem;
   background: var(--white);
   box-shadow: 0 9px 26px #10294008;
 }
+
+.venue-summary { display: flex; align-items: center; justify-content: space-between; gap: .75rem; min-height: 4.1rem; padding: .8rem .9rem; color: #102b40; font-size: 1.05rem; font-weight: 800; line-height: 1.3; cursor: pointer; list-style: none; }
+.venue-summary::-webkit-details-marker { display: none; }
+.venue-summary::after { content: '+'; flex: none; color: #16879b; font-size: 1.5rem; font-weight: 400; line-height: 1; }
+.venue[open] > .venue-summary::after { content: '−'; }
+.venue-summary:focus-visible { outline: 2px solid #16879b; outline-offset: -3px; }
+.venue[open] .venue-body { padding-top: 0; }
 
 .venue-body {
   display: flex;
@@ -1819,6 +1851,10 @@ span.calendar-day { color: #c7dce9; }
 
 .calendar-day[aria-pressed="true"]:focus-visible { outline: 3px solid var(--aqua); }
 .calendar-empty { color: #bdcfdd; font-size: .94rem; line-height: 1.5; }
+.calendar-disclosure { padding: .8rem .95rem; border: 1px solid #375269; border-radius: .6rem; background: #10283e; }
+.calendar-disclosure-toggle { font-weight: 800; }
+.calendar-disclosure[open] > .calendar-disclosure-toggle { margin-bottom: .8rem; }
+.calendar-disclosure [data-calendar-count] { color: #a9dfea; font-size: .9rem; }
 
 .event-list {
   list-style: none;

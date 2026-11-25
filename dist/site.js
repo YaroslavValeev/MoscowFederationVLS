@@ -111,6 +111,7 @@ function initCalendar() {
   const eventList = calendar.querySelector('#calendar-events');
   const empty = calendar.querySelector('[data-calendar-empty]');
   const status = calendar.querySelector('[data-calendar-status]');
+  const countLabel = calendar.querySelector('[data-calendar-count]');
   const plan = calendar.querySelector('[data-calendar-plan]');
   const events = [...eventList.querySelectorAll('.event')].map(item => {
     const start = item.querySelector('time').dateTime;
@@ -135,6 +136,7 @@ function initCalendar() {
       if (!event.item.hidden) count += 1;
     }
     eventList.hidden = count === 0;
+    countLabel.textContent = count ? `· ${count}` : '';
     empty.hidden = count !== 0;
     status.textContent = count ? `Показано событий — ${count}.` : empty.textContent;
   }
@@ -206,6 +208,7 @@ function initCalendar() {
     selectedDay = selectedDay === date ? '' : date;
     markSelected(days.querySelectorAll('[data-calendar-date]'), selectedDay ? button : null);
     showEvents();
+    if (selectedDay) eventList.open = true;
   });
 
   const latest = events.map(event => event.end).sort().at(-1);

@@ -1,6 +1,6 @@
 # ФВЛС Москвы
 
-Готовый к переносу срез сайта. Версия Sites 37 собрана из коммита `43b923b2d1d13e9109b1667e8b2d8c8ef69c34be`. В `dist/` находятся страницы, стили, скрипты, скачиваемые материалы и интерактивная иллюстрация пути спортсмена. В разделе FVLSchool ссылка ведёт на пример кабинета на сайте до выхода публичной версии приложения.
+Готовый к переносу срез сайта. Версия Sites 39 собрана из коммита `6033e3e9e9a1e2a55e07e0d5dae269eba2e1a519`. В `dist/` находятся страницы, стили, скрипты, скачиваемые материалы и интерактивная иллюстрация пути спортсмена. В разделе FVLSchool ссылка ведёт на пример кабинета на сайте до выхода публичной версии приложения. Страница `team.html` обозначает основной состав и резерв до подтверждения имён и фотографий.
 
 ## GitHub
 
@@ -31,6 +31,7 @@ docker run -d --rm --name fvls-moskva-preview -p 127.0.0.1::8080 fvls-moskva:rel
 fvls_preview_address="$(docker port fvls-moskva-preview 8080/tcp)"
 curl -fsSI "http://$fvls_preview_address/"
 curl -fsSI "http://$fvls_preview_address/school"
+curl -fsSI "http://$fvls_preview_address/team.html"
 ```
 
 В браузере проверьте инфографику «Путь спортсмена», переходы к дисциплинам, три колонки пути, запись в клуб и скачивание документов ЕВСК и DOCX.
@@ -46,6 +47,7 @@ curl -fsSI "http://$fvls_preview_address/school"
    docker compose up -d --build
    curl -fsSI http://127.0.0.1:8080/
    curl -fsSI http://127.0.0.1:8080/school
+   curl -fsSI http://127.0.0.1:8080/team.html
    ```
 
 2. Сохраните текущий виртуальный хост премии. В его HTTPS-виртуальном хосте замените маршрут `/` содержимым [deploy/fvls.mywavewake.ru.location.conf.example](deploy/fvls.mywavewake.ru.location.conf.example). Файл сохраняет TLS и заголовки на существующем прокси, а сайт работает во внутреннем контейнере.
@@ -57,6 +59,7 @@ curl -fsSI "http://$fvls_preview_address/school"
    systemctl reload nginx
    curl -fsSI https://fvls.mywavewake.ru/
    curl -fsSI https://fvls.mywavewake.ru/school
+   curl -fsSI https://fvls.mywavewake.ru/team.html
    ```
 
 4. Откройте главную страницу, `/school`, документы в `assets/documents/` и иллюстрацию в разделе `#athlete-path`. Проверьте увеличение и переходы по интерактивным областям схемы.

@@ -9,10 +9,10 @@
   <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/mark.png">
-  <link rel="stylesheet" href="styles.css?v=37">
+  <link rel="stylesheet" href="styles.css?v=39">
   <link rel="stylesheet" href="roadmap.css?v=35">
-  <script src="site.js?v=3" defer></script>
-  <script src="evsk-explorer.js?v=37" defer></script>
+  <script src="site.js?v=38" defer></script>
+  <script src="evsk-explorer.js?v=39" defer></script>
   <script src="roadmap.js?v=37" defer></script>
   <title>ФВЛС Москвы · Воднолыжный спорт</title>
 </head>
@@ -157,6 +157,7 @@
                 <a class="text-link" href="#athlete-benefits">Что дают разряды и награды</a>
                 <a class="text-link" href="#athlete-commercial">Коммерческий путь</a>
                 <a class="text-link" href="#coach-path">Тренерский путь</a>
+                <a class="text-link" href="team.html">Сборная Москвы</a>
               </div>
             </div>
 
@@ -358,11 +359,13 @@
             </div>
 
             <section class="athlete-howto" id="athlete-steps" aria-labelledby="athlete-steps-title">
-              <h4 id="athlete-steps-title">Что сделать спортсмену</h4>
+              <details class="athlete-disclosure">
+              <summary class="athlete-disclosure-toggle"><h4 id="athlete-steps-title">Что сделать спортсмену</h4></summary>
               <ol class="athlete-howto-grid" role="list">
                 <li class="athlete-goal-step">
-                  <img src="assets/athlete-path/target.png" alt="" width="44" height="44" loading="lazy">
-                  <strong>1. Выбрать цель</strong>
+                  <details class="athlete-step">
+                  <summary class="athlete-step-toggle"><img src="assets/athlete-path/target.png" alt="" width="44" height="44" loading="lazy"><strong>1. Выбрать цель</strong></summary>
+                  <div class="athlete-step-content">
                   <p>Раскройте направление и выберите дисциплину: рядом появится выдержка из ЕВСК. Вместе с тренером проверьте возраст, статус старта и все условия в документе.</p>
                   <div class="evsk-explorer">
                     <div class="evsk-groups" aria-label="Направления и дисциплины">
@@ -380,7 +383,7 @@
                         <ul role="list">
                           <li><a data-evsk="cable-tricks" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,231" target="_blank" rel="noopener">Фигурное катание на электротяге</a></li>
                           <li><a data-evsk="pool-tricks" href="assets/documents/evsk-waterski-299.pdf#page=10&amp;view=FitH,480" target="_blank" rel="noopener">Фигурное катание в бассейне</a></li>
-                          <li><a data-evsk="wake" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд на электротяге</a></li>
+                          <li><a data-evsk="wake-cable" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд на электротяге</a></li>
                           <li><a data-evsk="poda" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,187" target="_blank" rel="noopener">ПОДА — вейкборд на электротяге</a></li>
                           <li><a data-evsk="wake-pool" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд на электротяге в бассейне</a></li>
                           <li><a data-evsk="poda-pool" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,187" target="_blank" rel="noopener">ПОДА — вейкборд на электротяге в бассейне</a></li>
@@ -389,9 +392,9 @@
                       <details class="evsk-group">
                         <summary>Вейк-дисциплины за катером</summary>
                         <ul role="list">
-                          <li><a data-evsk="wake" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд за катером</a></li>
-                          <li><a data-evsk="wake" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakesurf (доска длинная)</a></li>
-                          <li><a data-evsk="wake" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakeskim (доска короткая)</a></li>
+                          <li><a data-evsk="wake-boat" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Вейкборд за катером</a></li>
+                          <li><a data-evsk="wake-surf" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakesurf (доска длинная)</a></li>
+                          <li><a data-evsk="wake-skim" href="assets/documents/evsk-waterski-299.pdf#page=7&amp;view=FitH,79" target="_blank" rel="noopener">Wakeskim (доска короткая)</a></li>
                         </ul>
                       </details>
                     </div>
@@ -406,26 +409,33 @@
                     <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=3" target="_blank" rel="noopener">МС и КМС</a></li>
                     <li><a class="text-link" href="assets/documents/evsk-waterski-299.pdf#page=1" target="_blank" rel="noopener">МСМК</a></li>
                   </ul>
+                  </div>
+                  </details>
                 </li>
-                <li><img src="assets/athlete-path/flag.png" alt="" width="44" height="44" loading="lazy"><strong>2. Заявиться на старт</strong><p>Проверьте официальный статус турнира, условия допуска и срок заявки у организатора.</p><a class="button evsk-calendar-link" href="#calendar">Выбрать событие в календаре</a></li>
-                <li><img src="assets/athlete-path/protocol.png" alt="" width="44" height="44" loading="lazy"><strong>3. Получить протокол</strong><p>Выполните норматив или требование по месту. Проверьте результат и документы о составе судейской коллегии.</p></li>
+                <li><details class="athlete-step"><summary class="athlete-step-toggle"><img src="assets/athlete-path/flag.png" alt="" width="44" height="44" loading="lazy"><strong>2. Заявиться на старт</strong></summary><div class="athlete-step-content"><p>Проверьте официальный статус турнира, условия допуска и срок заявки у организатора.</p><a class="button evsk-calendar-link" href="#calendar">Выбрать событие в календаре</a></div></details></li>
+                <li><details class="athlete-step"><summary class="athlete-step-toggle"><img src="assets/athlete-path/protocol.png" alt="" width="44" height="44" loading="lazy"><strong>3. Получить протокол</strong></summary><div class="athlete-step-content"><p>Выполните норматив или требование по месту. Проверьте результат и документы о составе судейской коллегии.</p></div></details></li>
                 <li>
-                  <img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy">
-                  <strong>4. Оформить разряд</strong>
+                  <details class="athlete-step">
+                  <summary class="athlete-step-toggle"><img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy"><strong>4. Оформить разряд</strong></summary>
+                  <div class="athlete-step-content">
                   <p>Заполните представление вместе с тренером или федерацией. Срок подачи — четыре месяца с даты выполнения нормы или требования.</p>
                   <a class="text-link athlete-rank-download" href="assets/documents/sport-rank-submission-template.docx" download="Представление-на-спортивный-разряд.docx">Скачать шаблон представления · DOCX</a>
+                  </div>
+                  </details>
                 </li>
               </ol>
               <p class="athlete-rank-note">МС и МСМК оформляются по процедуре присвоения спортивных званий. Перечень документов и кто подаёт представление указаны в Положении о ЕВСК.</p>
               <a class="text-link athlete-path-link" href="school.html#documents">Скачать ЕВСК и правила</a>
+              </details>
             </section>
 
             <section class="athlete-howto" id="athlete-benefits" aria-labelledby="athlete-benefits-title">
-              <h4 id="athlete-benefits-title">Что дают разряды, звания и награды</h4>
+              <details class="athlete-disclosure">
+              <summary class="athlete-disclosure-toggle"><h4 id="athlete-benefits-title">Что дают разряды, звания и награды</h4></summary>
               <p class="athlete-rank-note">За само присвоение спортивного разряда или звания федеральная прибавка к пенсии и окладу не установлена. Оклад, надбавки и премии зависят от трудового договора и системы оплаты работодателя. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_34683/ec0a7a4cf2bbf1f8f89970fd480c3fc9ed860f82/">ТК РФ, статья 135</a> · <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_34683/a27df91d3d21563ac36eb0a03576f1d59f9b639d/">Статья 348.2</a></p>
               <div class="athlete-benefit-grid">
                 <div>
-                  <h5>Разряды, звания и сборная</h5>
+                  <h5>Разряды и звания</h5>
                   <dl class="athlete-benefit-list">
                     <div>
                       <dt>II и I юношеские</dt>
@@ -443,14 +453,10 @@
                       <dt>Мастер спорта России (МС) и МСМК</dt>
                       <dd>За каждое звание спортсмен получает <strong>удостоверение и нагрудный знак</strong>. В подведомственных Москомспорту учреждениях возможна стимулирующая выплата за спортивное звание по локальным правилам. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_73038/1360fb7fc3ba54b4560c3e087703c73bdba40479/">Статья 22 закона о спорте</a> · <a class="text-link" href="https://base.garant.ru/414210715/53f89421bbdaf741eb2d1ecc4ddb4c33/">Рекомендации № 124, пункт 2.10.5</a></dd>
                     </div>
-                    <div>
-                      <dt>Отбор в сборную Москвы</dt>
-                      <dd>На официальных мероприятиях предусмотрены проезд, проживание, питание и экипировка в пределах бюджета. Ежемесячное вознаграждение выплачивается по условиям трудового договора, если он заключён. Поощрение за высокий результат зависит от оснований и порядка, установленных Москвой. <a class="text-link" href="assets/documents/moscow-team-146.pdf#page=2">Положение о сборных Москвы № 146, пункты 2.1.1 и 2.1.5–2.1.6</a></dd>
-                    </div>
                   </dl>
                 </div>
-                <div>
-                  <h5>Признание заслуг и меры поддержки</h5>
+                <details class="athlete-benefit-details">
+                  <summary class="athlete-sub-toggle"><h5>Признание заслуг и меры поддержки</h5></summary>
                   <dl class="athlete-benefit-list">
                     <div>
                       <dt>Заслуженный и Почётный мастер спорта России</dt>
@@ -465,10 +471,15 @@
                       <dd>Орден может служить основанием для звания «Ветеран труда» при страховом стаже, учитываемом для пенсии, от 25 лет у мужчин, от 20 лет у женщин или необходимой выслуге. При оформленном статусе и выполнении городских условий в Москве доступны бесплатный городской проезд, скидка 50% на жильё и коммунальные услуги и <strong>1 328 ₽ в месяц в 2026 году</strong> для получателей выплаты по пункту 4.2.4. <a class="text-link" href="https://www.consultant.ru/document/cons_doc_LAW_5490/77214a9657d36dfc647fdcb3cc35a1eae426945d/">Закон «О ветеранах», статья 7</a> · <a class="text-link" href="https://base.garant.ru/382231/">Закон Москвы № 70, статья 6</a> · <a class="text-link" href="https://base.garant.ru/413275407/53f89421bbdaf741eb2d1ecc4ddb4c33/">Постановление № 3025-ПП</a></dd>
                     </div>
                   </dl>
-                </div>
+                </details>
               </div>
-              <div class="athlete-competition-awards" id="athlete-salary">
-                <h5>Прибавка к окладу за результат</h5>
+              <details class="athlete-competition-awards" id="team-benefits">
+                <summary class="athlete-sub-toggle"><h5>Сборная Москвы</h5></summary>
+                <p>На официальных мероприятиях предусмотрены проезд, проживание, питание и экипировка в пределах бюджета. Ежемесячное вознаграждение выплачивается по условиям трудового договора, если он заключён. Поощрение за высокий результат зависит от оснований и порядка, установленных Москвой. <a class="text-link" href="assets/documents/moscow-team-146.pdf#page=2">Положение о сборных Москвы № 146</a></p>
+                <a class="text-link athlete-path-link" href="team.html">Страница сборной Москвы и резерва</a>
+              </details>
+              <details class="athlete-competition-awards" id="athlete-salary">
+                <summary class="athlete-sub-toggle"><h5>Прибавка к окладу за результат</h5></summary>
                 <p>Москомспорт рекомендует коэффициенты к минимальному должностному окладу для сотрудников на должностях «спортсмен» и «спортсмен-инструктор» в подведомственных учреждениях. Примеры ниже относятся к индивидуальным дисциплинам.</p>
                 <ul class="athlete-path-examples" role="list">
                   <li><strong>До 20%</strong> за 1–3-е места первенства России среди юношей и юниоров.</li>
@@ -477,22 +488,23 @@
                   <li><strong>До 150%</strong> за 1–3-е места чемпионата Европы или 1–6-е места чемпионата мира.</li>
                 </ul>
                 <p>Размер устанавливает учреждение в своей системе оплаты. За звания и награды возможны отдельные стимулирующие выплаты по её условиям. <a class="text-link" href="https://base.garant.ru/414210715/53f89421bbdaf741eb2d1ecc4ddb4c33/">Москомспорт · распоряжение № 124 от 6 мая 2026 года, таблица 2 и пункт 2.10.5</a></p>
-              </div>
-              <div class="athlete-competition-awards" id="athlete-pension">
-                <h5>Когда возникает право на доплату к пенсии</h5>
+              </details>
+              <details class="athlete-competition-awards" id="athlete-pension">
+                <summary class="athlete-sub-toggle"><h5>Когда возникает право на доплату к пенсии</h5></summary>
                 <ul class="athlete-path-examples" role="list">
                   <li><strong>Федеральная доплата за чемпионство.</strong> Чемпионам Олимпийских, Паралимпийских и Сурдлимпийских игр полагается дополнительное ежемесячное материальное обеспечение в размере <strong>250% установленной законом базовой социальной пенсии</strong>. Выплата производится при наличии пенсии и вне периода оплачиваемой работы. <a class="text-link" href="https://sfr.gov.ru/grazhdanam/socialnaya_podderzhka/federal_beneficiaries/dmo">Социальный фонд России · закон № 21-ФЗ</a></li>
                   <li><strong>Компенсация Москвы.</strong> В 2026 году предусмотрено <strong>22 238 ₽ в месяц</strong> для чемпионов и призёров Олимпийских, Паралимпийских и Сурдлимпийских игр и <strong>20 015 ₽ в месяц</strong> для категорий чемпионов мира и Европы, перечисленных в городских актах. Для воднолыжных дисциплин право на выплату нужно проверять по критериям программы Игр, виду пенсии и статусу соревнования. <a class="text-link" href="https://moskva-pravo.ru/zakon/2009/07/15/n-27/">Закон Москвы № 27, статья 30</a> · <a class="text-link" href="https://base.garant.ru/390567/53f89421bbdaf741eb2d1ecc4ddb4c33/">Условия № 912-ПП</a> · <a class="text-link" href="https://base.garant.ru/413275407/53f89421bbdaf741eb2d1ecc4ddb4c33/">Размеры № 3025-ПП, пункты 4.3.1.11–4.3.1.12</a></li>
                 </ul>
-              </div>
-              <div class="athlete-competition-awards">
-                <h5>Что получают призёры соревнований</h5>
+              </details>
+              <details class="athlete-competition-awards">
+                <summary class="athlete-sub-toggle"><h5>Что получают призёры соревнований</h5></summary>
                 <ul class="athlete-path-examples" role="list">
                   <li><strong>Чемпионат и первенство России 2026.</strong> Призёры в личных дисциплинах получают медали и дипломы Минспорта. Победителям чемпионата России также вручают нагрудный значок «Чемпион России», один раз на спортсмена. <a class="text-link" href="https://www.minsport.gov.ru/neolimpijskie-vidy-sporta-2026/vodnolyzhnyj-sport-2026/">Положение Минспорта на 2026 год</a></li>
                   <li><strong>Денежные призы отдельных стартов.</strong> Для первого этапа Кубка России по вейкборду на электротяге в Дзержинском в августе 2024 года ФВЛС России объявила общий призовой фонд <strong>600 000&nbsp;₽</strong>. Выплаты и распределение призового фонда определяет положение конкретного старта. <a class="text-link" href="https://waterskifed.ru/posts/year/2024/2">Объявление ФВЛС России</a></li>
                 </ul>
-              </div>
               <p class="athlete-rank-note"><strong>Баллы при поступлении.</strong> В училище олимпийского резерва Иркутска при поступлении на «Физическую культуру» в 2026/27 году к вступительным баллам добавляли 2 балла за действующий I разряд, 3 за КМС и 4 за МС или МСМК. ТУСУР в 2026 году начислял 4 конкурсных балла за КМС, МС или МСМК. <a class="text-link" href="https://www.irktfk.ru/images/Abitur/norm_doc/Pravila-priema_26_FK_bez-lista-sogl.pdf">Правила училища</a> · <a class="text-link" href="https://tusur.ru/sveden/files/eis/Pravila_priema_2026.pdf">Правила ТУСУР</a></p>
+              </details>
+              </details>
             </section>
 
             <section class="athlete-howto" id="athlete-commercial" aria-labelledby="athlete-commercial-title">
@@ -602,7 +614,30 @@
     <section class="section section-catalog" id="venues" aria-labelledby="venues-title">
       <div class="container">
         <div class="section-heading catalog-heading">
-          <h2 id="venues-title" tabindex="-1">Где заниматься</h2>
+          <h2 id="venues-title" tabindex="-1">Где заниматься?</h2>
+          <p>Конечно, только с профессионалами в школе «ФВЛС Москва».</p>
+        </div>
+
+        <div class="venue-grid" id="venue-grid" aria-label="Площадки и спортшколы">
+          <details class="venue" id="fenix" data-venue data-disciplines="ski board surf skim" data-trial-venue>
+            <summary class="venue-summary"><span data-venue-name>Вейк-клуб Fenix</span></summary>
+            <div class="venue-body">
+              <p class="venue-description"><span data-venue-address>Карамышевская набережная, 13, стр. 2</span> · Хорошёво-Мнёвники<br>Водные лыжи, вейкборд, вейксерф и WakeSkim.</p>
+              <a class="venue-action" href="https://wakeschool.ru/zapisatsya-na-zanyatiya" data-venue-action data-primary-label="Перейти к записи в Fenix" aria-label="Расписание и запись, вейк-клуб Fenix">Расписание и запись</a>
+              <span data-venue-discipline hidden>Водные лыжи</span>
+              <span data-venue-description hidden>Водные лыжи, вейкборд, вейксерф и WakeSkim. Занятия с инструктором для детей и взрослых.</span>
+              <span data-venue-schedule hidden>Открытая вода, время по записи</span>
+              <a href="tel:+79031762708" data-venue-phone hidden>+7 (903) 176-27-08</a>
+              <a href="https://wakeschool.ru/waterskiing" data-venue-source hidden>Уроки на водных лыжах</a>
+            </div>
+          </details>
+          <details class="venue" id="city-school" aria-labelledby="city-school-title">
+            <summary class="venue-summary"><span id="city-school-title">Воднолыжный спорт в городской спортшколе</span></summary>
+            <div class="venue-body">
+              <p class="venue-description">Московская академия парусного и гребных видов спорта публикует условия поступления и информацию о наборе.</p>
+              <a class="venue-action" href="https://msra.mossport.ru/regtoschool/">Узнать о наборе</a>
+            </div>
+          </details>
         </div>
 
         <section class="school-locations" id="school-locations" aria-labelledby="school-title">
@@ -769,27 +804,6 @@
           </div>
 
           <p id="venue-count" class="sr-only" role="status"></p>
-          <div class="venue-grid" id="venue-grid">
-            <article class="venue" id="fenix" data-venue data-disciplines="ski board surf skim" data-trial-venue>
-              <div class="venue-body">
-                <h4 data-venue-name>Вейк-клуб Fenix</h4>
-                <p class="venue-description"><span data-venue-address>Карамышевская набережная, 13, стр. 2</span> · Хорошёво-Мнёвники<br>Водные лыжи, вейкборд, вейксерф и WakeSkim.</p>
-                <a class="venue-action" href="https://wakeschool.ru/zapisatsya-na-zanyatiya" data-venue-action data-primary-label="Перейти к записи в Fenix" aria-label="Расписание и запись, вейк-клуб Fenix">Расписание и запись</a>
-                <span data-venue-discipline hidden>Водные лыжи</span>
-                <span data-venue-description hidden>Водные лыжи, вейкборд, вейксерф и WakeSkim. Занятия с инструктором для детей и взрослых.</span>
-                <span data-venue-schedule hidden>Открытая вода, время по записи</span>
-                <a href="tel:+79031762708" data-venue-phone hidden>+7 (903) 176-27-08</a>
-                <a href="https://wakeschool.ru/waterskiing" data-venue-source hidden>Уроки на водных лыжах</a>
-              </div>
-            </article>
-            <aside class="venue" id="city-school" aria-labelledby="city-school-title">
-              <div class="venue-body">
-                <h4 id="city-school-title">Воднолыжный спорт в городской спортшколе</h4>
-                <p class="venue-description">Московская академия парусного и гребных видов спорта публикует условия поступления и информацию о наборе.</p>
-                <a class="venue-action" href="https://msra.mossport.ru/regtoschool/">Узнать о наборе</a>
-              </div>
-            </aside>
-          </div>
           <div class="catalog-empty" id="catalog-empty" hidden>
             <p>По этим фильтрам площадок пока нет.</p>
             <button class="button button-outline" type="button" id="reset-filters">Сбросить фильтры</button>
@@ -978,7 +992,8 @@
         <div class="calendar-content">
           <p class="calendar-empty" data-calendar-empty hidden>В этом месяце в календаре пока нет событий.</p>
           <p class="sr-only" data-calendar-status role="status"></p>
-          <div class="event-panel" id="calendar-events">
+          <details class="event-panel calendar-disclosure" id="calendar-events">
+            <summary class="calendar-disclosure-toggle"><span>Мероприятия месяца <span data-calendar-count></span></span></summary>
             <ul class="event-list">
               <li class="event">
                 <time class="event-date" datetime="2026-11-20"><b>20</b><span>ноя</span></time>
@@ -1029,9 +1044,9 @@
                 <span class="event-kind">Чемпионат Москвы</span>
               </li>
             </ul>
-          </div>
-          <div class="event-panel calendar-plan" id="calendar-2027" data-calendar-plan="2027">
-            <h3>Что будет в календаре</h3>
+          </details>
+          <details class="event-panel calendar-plan calendar-disclosure" id="calendar-2027" data-calendar-plan="2027">
+            <summary class="calendar-disclosure-toggle"><span>Что будет в календаре</span></summary>
             <ul class="event-categories" role="list">
               <li><strong>Соревнования</strong><span>Кубки, первенства и чемпионаты</span></li>
               <li><strong>Встречи с руководством</strong><span>Вопросы спортсменов, семей и клубов</span></li>
@@ -1044,7 +1059,7 @@
               <a class="text-link" href="school.html#competition-regulations-2027">Проект положения о стартах на 2027 год</a>
               <a class="text-link" href="https://waterskifed.ru/posts">Анонсы ФВЛС России</a>
             </div>
-          </div>
+          </details>
         </div>
         <div class="calendar-actions">
           <a class="button button-primary" href="https://github.com/YaroslavValeev/MyWave_Event_App" aria-describedby="organizer-destination">Для организатора</a>

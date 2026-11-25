@@ -1,0 +1,36 @@
+.team-page { background: #f1f7fa; color: #102b40; }
+.team-header { gap: 1rem; }
+.team-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .65rem 1.4rem; font-size: .9rem; font-weight: 700; }
+.team-nav a { color: #f4fbff; }
+.team-nav a:hover { color: #75d9ed; }
+.team-hero { padding: clamp(2.8rem, 7vw, 5.6rem) 0; color: #f8fcff; background: linear-gradient(125deg, #071a2b 12%, #0e2c42 65%, #164355); }
+.team-hero-inner { max-width: 69rem; }
+.team-back { display: inline-block; margin-bottom: 2rem; color: #a2e7f6; font-weight: 700; }
+.team-eyebrow, .team-kicker { color: #8fe5f6; font-size: .77rem; font-weight: 800; letter-spacing: .08em; }
+.team-hero h1 { margin: .55rem 0 .9rem; font-size: clamp(2.7rem, 7.5vw, 5.2rem); line-height: 1; letter-spacing: -.045em; }
+.team-hero h1 span { color: #70d8ee; }
+.team-hero-inner > p:last-child { max-width: 33rem; color: #d9eaf2; font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.6; }
+.team-section { padding: clamp(2.7rem, 6vw, 4.7rem) 0; }
+.team-section-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem; }
+.team-kicker { color: #237d90; }
+.team-section-heading h2 { margin-top: .35rem; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.1; letter-spacing: -.035em; }
+.team-section-heading > p { max-width: 25rem; color: #536d7e; line-height: 1.55; }
+.team-roster-grid, .team-info { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.team-roster-card { display: flex; flex-direction: column; align-items: start; min-height: 15rem; padding: clamp(1.2rem, 2.6vw, 2rem); border: 1px solid #c9dee7; border-radius: .8rem; background: #fff; box-shadow: 0 12px 30px #0d30430a; }
+.team-card-number { margin-bottom: 1.5rem; color: #32a4ba; font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+.team-roster-card h3, .team-info h3 { font-size: 1.25rem; line-height: 1.2; }
+.team-roster-card p, .team-info p { margin-top: .65rem; color: #526b7a; line-height: 1.55; }
+.team-status { display: inline-block; margin-top: auto; padding-top: 1.2rem; color: #147e91; font-size: .86rem; font-weight: 800; }
+.team-info { margin-top: 1rem; }
+.team-info > div { padding: 1.2rem .1rem; }
+.team-link { display: inline-block; margin-top: .7rem; color: #116c80; font-weight: 800; text-decoration: underline; text-underline-offset: .22em; }
+.team-footer { padding: 1.4rem 0; background: #081a2c; color: #dcebf3; }
+.team-footer .container { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; font-size: .9rem; }
+.team-footer .container span { margin-right: auto; font-weight: 800; }
+.team-footer a { color: #9ae5f4; }
+@media (max-width: 660px) {
+  .team-header { padding-block: .65rem; }
+  .team-nav { width: 100%; justify-content: flex-start; gap: .5rem .9rem; font-size: .8rem; }
+  .team-roster-grid, .team-info { grid-template-columns: minmax(0, 1fr); }
+  .team-roster-card { min-height: 12rem; }
+}
