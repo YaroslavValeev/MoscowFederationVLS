@@ -1,0 +1,24 @@
+.roadmap-picture { margin: 2rem auto 0; max-width: 100%; }
+.roadmap-picture-open { display: block; width: 100%; border-radius: .8rem; outline-offset: .3rem; }
+.roadmap-picture img { display: block; width: 100%; height: auto; border: 1px solid #41677c; object-fit: contain; }
+.roadmap-picture figcaption { margin-top: .6rem; color: #c8e4ed; font-size: .875rem; line-height: 1.5; }
+.roadmap-viewer { width: min(96vw, 90rem); max-width: none; max-height: 92vh; padding: 0; overflow: auto; border: 1px solid #5b8ba0; border-radius: 1rem; background: #0b2238; color: #f4fbff; }
+.roadmap-viewer::backdrop { background: rgb(1 12 23 / 80%); }
+.roadmap-viewer-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1.25rem; }
+.roadmap-viewer-header h2 { margin: 0; font-size: 1.3rem; }
+.roadmap-viewer-header p { margin: .4rem 0 0; color: #c8e4ed; font-size: .9rem; line-height: 1.5; }
+.roadmap-viewer-close { width: 2.75rem; height: 2.75rem; border: 1px solid #63d3e3; border-radius: .5rem; background: transparent; color: #fff; font-size: 1.75rem; line-height: 1; }
+.roadmap-viewer-controls { display: flex; align-items: center; gap: .7rem; padding: 0 1.25rem .8rem; }
+.roadmap-viewer-controls button { width: 2.5rem; height: 2.5rem; border: 1px solid #63d3e3; border-radius: .5rem; background: transparent; color: #fff; font-size: 1.25rem; }
+.roadmap-viewer-controls span { min-width: 3.5rem; color: #d6edf3; font-size: .875rem; text-align: center; }
+.roadmap-viewer-scroll { max-height: 62vh; overflow: auto; background: #071727; overscroll-behavior: contain; }
+.roadmap-map-surface { position: relative; width: max(100%, var(--roadmap-map-width, 1586px)); }
+.roadmap-map-surface > img { display: block; width: 100%; height: auto; max-width: none; }
+.roadmap-hotspots { position: absolute; inset: 0; }
+.roadmap-hotspot { position: absolute; display: block; border: 1px solid rgb(114 221 247 / 65%); border-radius: .3rem; background: rgb(114 221 247 / 6%); }
+.roadmap-hotspot:hover, .roadmap-hotspot:focus-visible { border: 2px solid #a6f3ff; outline: 2px solid #082036; background: rgb(114 221 247 / 25%); }
+.roadmap-viewer-index { padding: 1rem 1.25rem 1.25rem; }
+.roadmap-viewer-index summary { cursor: pointer; font-weight: 700; }
+.roadmap-viewer-index ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .6rem 1.25rem; padding-left: 1.2rem; }
+.roadmap-viewer-index a { color: #9debf5; overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: .18em; }
+@media (max-width: 660px) { .roadmap-viewer { width: 96vw; } .roadmap-viewer-header { padding: 1rem; } }
