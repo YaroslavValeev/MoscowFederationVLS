@@ -588,6 +588,27 @@ button:disabled { opacity: .6; cursor: default; }
 
 .athlete-ranks { grid-row: span 2; }
 
+.athlete-ranks-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .65rem;
+  width: 100%;
+  padding: .7rem .8rem;
+  border: 1px solid #63d3e3;
+  border-radius: .6rem;
+  color: var(--white);
+  cursor: pointer;
+  list-style: none;
+}
+
+.athlete-ranks-toggle::-webkit-details-marker { display: none; }
+.athlete-ranks-toggle:hover { border-color: #aff1fc; color: #aff1fc; }
+.athlete-ranks-toggle .athlete-branch-title { justify-content: start; font-size: 1.05rem; }
+.athlete-ranks-toggle .athlete-branch-title img { width: 2rem; height: 2rem; }
+.athlete-ranks-toggle::after { content: "+"; flex: none; color: var(--aqua); font-size: 1.5rem; line-height: 1; }
+.athlete-ranks[open] .athlete-ranks-toggle::after { content: "−"; }
+
 .athlete-tree::before,
 .athlete-tree::after {
   content: "";

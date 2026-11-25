@@ -15,8 +15,8 @@
 .roadmap-map-surface { position: relative; width: max(100%, var(--roadmap-map-width, 1586px)); }
 .roadmap-map-surface > img { display: block; width: 100%; height: auto; max-width: none; }
 .roadmap-hotspots { position: absolute; inset: 0; }
-.roadmap-hotspot { position: absolute; display: block; border: 1px solid rgb(114 221 247 / 65%); border-radius: .3rem; background: rgb(114 221 247 / 6%); }
-.roadmap-hotspot:hover, .roadmap-hotspot:focus-visible { border: 2px solid #a6f3ff; outline: 2px solid #082036; background: rgb(114 221 247 / 25%); }
+.roadmap-hotspot { position: absolute; display: block; border: 0; background: transparent; cursor: pointer; }
+.roadmap-hotspot:focus-visible { outline: 2px solid #a6f3ff; outline-offset: -2px; }
 .roadmap-viewer-index { padding: 1rem 1.25rem 1.25rem; }
 .roadmap-viewer-index summary { cursor: pointer; font-weight: 700; }
 .roadmap-viewer-index ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .6rem 1.25rem; padding-left: 1.2rem; }

@@ -9,8 +9,8 @@
   <meta property="og:description" content="Где заниматься в Москве, как выйти на воду впервые и где следить за соревнованиями.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/mark.png">
-  <link rel="stylesheet" href="styles.css?v=31">
-  <link rel="stylesheet" href="roadmap.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="roadmap.css?v=35">
   <script src="site.js?v=3" defer></script>
   <script src="roadmap.js?v=34" defer></script>
   <title>ФВЛС Москвы · Воднолыжный спорт</title>
@@ -167,11 +167,13 @@
             </figure>
 
             <div class="athlete-tree">
-              <div class="athlete-branch athlete-ranks">
-                <h4 class="athlete-branch-title">
-                  <img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy" decoding="async">
-                  Разряды и звания
-                </h4>
+              <details class="athlete-branch athlete-ranks">
+                <summary class="athlete-ranks-toggle">
+                  <h4 class="athlete-branch-title">
+                    <img src="assets/athlete-path/medal.png" alt="" width="44" height="44" loading="lazy" decoding="async">
+                    Разряды и звания
+                  </h4>
+                </summary>
                 <div class="athlete-rank-group">
                   <h5>Юношеские разряды</h5>
                   <p>В дисциплине «катер — прыжки с трамплина» измеряют дальность прыжка в метрах. Разряды можно выполнить с 9 лет на официальных соревнованиях любого статуса.</p>
@@ -242,7 +244,7 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </details>
 
               <div class="athlete-branch">
                 <h4 class="athlete-branch-title">
@@ -1151,7 +1153,7 @@
     <div class="roadmap-viewer-header">
       <div>
         <h2 id="roadmap-viewer-title">Путь спортсмена ФВЛС</h2>
-        <p id="roadmap-viewer-help">Нажмите на выделенный объект, чтобы открыть документ или страницу. Схему можно прокручивать и увеличивать.</p>
+        <p id="roadmap-viewer-help">Нажмите на объект схемы, чтобы открыть документ или страницу. Схему можно прокручивать и увеличивать.</p>
       </div>
       <form method="dialog"><button class="roadmap-viewer-close" type="submit" aria-label="Закрыть схему" autofocus>×</button></form>
     </div>
