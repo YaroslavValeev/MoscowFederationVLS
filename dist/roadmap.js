@@ -1,8 +1,8 @@
 /* Координаты заданы в процентах от исходной иллюстрации 1983 × 793. */
 const roadmapTargets = [
   { label: 'Школа ФВЛС — площадки и обучение', href: 'index.html#school-locations', kind: 'страница', box: [1.3, 18.5, 5.7, 18] },
-  { label: 'Обучение спортсмена — школа ФВЛС', href: 'school.html#tyaga', kind: 'страница', box: [7.3, 18.5, 6.3, 18] },
-  { label: 'Выбор дисциплины — правила', href: 'school.html#discipline-rules-heading', kind: 'страница', box: [13.8, 18.5, 6.1, 18] },
+  { label: 'Выбор дисциплины — правила', href: 'school.html#discipline-rules-heading', kind: 'страница', box: [7.3, 18.5, 6.3, 18] },
+  { label: 'Обучение спортсмена — школа ФВЛС', href: 'school.html#tyaga', kind: 'страница', box: [13.8, 18.5, 6.1, 18] },
   { label: 'Первый старт — календарь мероприятий', href: 'index.html#calendar', kind: 'страница', box: [20.4, 18.5, 4.8, 18] },
   { label: 'II юношеский разряд — нормативы ЕВСК', href: 'assets/documents/evsk-waterski-299.pdf#page=9', kind: 'документ', box: [25.5, 18.5, 5.1, 18] },
   { label: 'I юношеский разряд — нормативы ЕВСК', href: 'assets/documents/evsk-waterski-299.pdf#page=9', kind: 'документ', box: [31.3, 18.5, 5.2, 18] },

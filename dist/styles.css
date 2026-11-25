@@ -607,7 +607,7 @@ button:disabled { opacity: .6; cursor: default; }
 .athlete-ranks-toggle .athlete-branch-title { justify-content: start; font-size: 1.05rem; }
 .athlete-ranks-toggle .athlete-branch-title img { width: 2rem; height: 2rem; }
 .athlete-ranks-toggle::after { content: "+"; flex: none; color: var(--aqua); font-size: 1.5rem; line-height: 1; }
-.athlete-ranks[open] .athlete-ranks-toggle::after { content: "−"; }
+details[open] > .athlete-ranks-toggle::after { content: "−"; }
 
 .athlete-tree::before,
 .athlete-tree::after {
@@ -647,10 +647,6 @@ button:disabled { opacity: .6; cursor: default; }
 
 .athlete-coach {
   grid-column: 2 / -1;
-  padding: clamp(.9rem, 1.7vw, 1.3rem);
-  border: 1px solid #456176;
-  border-radius: .65rem;
-  background: #102940;
 }
 
 .athlete-coach .athlete-branch-title { justify-content: start; }
@@ -660,6 +656,7 @@ button:disabled { opacity: .6; cursor: default; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem 1.25rem;
   margin: .65rem 0 0;
+  padding: 0 .8rem .8rem;
 }
 
 .athlete-coach-details > div {
@@ -720,6 +717,30 @@ button:disabled { opacity: .6; cursor: default; }
 .athlete-evsk-links a, .athlete-evsk-tables a { display: inline-block; padding-block: .2rem; font-size: .9rem; }
 .athlete-evsk-tables { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
 .athlete-rank-download { justify-self: start; margin-top: .2rem; }
+
+.evsk-explorer { display: grid; grid-template-columns: minmax(13rem, .9fr) minmax(0, 1.4fr); gap: .8rem; margin-block: .45rem; align-items: start; }
+.evsk-groups { display: grid; gap: .45rem; }
+.evsk-group { border: 1px solid #456176; border-radius: .55rem; overflow: hidden; background: #102940; }
+.evsk-group summary { display: flex; justify-content: space-between; align-items: center; gap: .6rem; padding: .7rem .8rem; color: #f7fcff; font-weight: 700; cursor: pointer; list-style: none; }
+.evsk-group summary::-webkit-details-marker { display: none; }
+.evsk-group summary::after { content: '+'; color: var(--aqua); font-size: 1.3rem; line-height: 1; }
+.evsk-group[open] summary::after { content: '−'; }
+.evsk-group ul { display: grid; gap: .2rem; margin: 0; padding: 0 .45rem .45rem; list-style: none; }
+.evsk-group li a, .evsk-choice { display: block; width: 100%; padding: .55rem .6rem; border: 1px solid transparent; border-radius: .35rem; color: #dceef4; background: transparent; font: inherit; font-size: .9rem; line-height: 1.35; text-align: left; cursor: pointer; }
+.evsk-group li a { color: var(--aqua); }
+.evsk-choice:hover, .evsk-choice[aria-pressed="true"] { border-color: #63d3e3; color: #fff; background: #183b52; }
+.evsk-choice:focus-visible, .evsk-group summary:focus-visible { outline: 2px solid #a7eef8; outline-offset: -2px; }
+.evsk-result { min-width: 0; padding: .85rem; border: 1px solid #456176; border-radius: .55rem; background: #102940; }
+.evsk-result h5 { margin: 0 0 .4rem; color: #fff; font-size: 1rem; }
+.evsk-result p + p { margin-top: .55rem; }
+.evsk-table-wrap { overflow-x: auto; margin: .7rem 0; }
+.evsk-table { width: 100%; border-collapse: collapse; color: #e9f6fc; font-size: .84rem; line-height: 1.35; }
+.evsk-table caption { margin-bottom: .4rem; text-align: left; color: #bed8e6; }
+.evsk-table th, .evsk-table td { padding: .43rem .35rem; border-bottom: 1px solid #345268; vertical-align: top; text-align: left; }
+.evsk-table thead th { color: #9ee6f4; }
+.evsk-table th:first-child { min-width: 7rem; }
+.evsk-result .text-link { display: inline-block; margin-top: .55rem; }
+.evsk-calendar-link { justify-self: start; margin-top: .5rem; font-size: .88rem; }
 
 .athlete-map {
   --map-line: #d3e7f2;
@@ -2199,7 +2220,7 @@ span.calendar-day { color: #c7dce9; }
 
 @media (max-width: 660px) {
   html { scroll-padding-top: 5.25rem; }
-  .athlete-howto-grid, .athlete-evsk-links, .athlete-coach-details { grid-template-columns: minmax(0, 1fr); }
+  .athlete-howto-grid, .athlete-evsk-links, .athlete-coach-details, .evsk-explorer { grid-template-columns: minmax(0, 1fr); }
   .site-header { position: sticky; }
   .header-inner { min-height: 4.1rem; flex-wrap: wrap; gap: 0; }
   .brand img { width: 2.25rem; height: 2.25rem; }
