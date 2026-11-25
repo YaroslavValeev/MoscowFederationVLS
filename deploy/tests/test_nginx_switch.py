@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import nginx_switch as switch
@@ -121,6 +122,58 @@ class NginxSwitchTests(unittest.TestCase):
         self.assertEqual(self.path.read_text(encoding='utf-8'), CONFIG)
         self.assertFalse((backup_dir / 'latest.json').exists())
         self.assertEqual(run.call_count, 2)
+
+    def test_https_check_retries_old_worker_and_accepts_exact_release(self):
+        root = Path(self.temp.name)
+        (root / 'dist/assets').mkdir(parents=True)
+        contents = {'/': b'<title>New site</title>', '/school': b'school', '/team.html': b'team', '/assets/mark.png': b'png'}
+        for url, filename in [('/', 'index.html'), ('/school', 'school.html'), ('/team.html', 'team.html'), ('/assets/mark.png', 'assets/mark.png')]:
+            (root / 'dist' / filename).write_bytes(contents[url])
+        calls = []
+
+        def fake_curl(command, **kwargs):
+            url = urlsplit(command[-1]).path
+            calls.append(url)
+            body = b'<title>Old site</title>' if len(calls) == 1 else contents[url]
+            Path(command[command.index('--output') + 1]).write_bytes(body)
+            return mock.Mock(returncode=0, stdout=b'200', stderr=b'')
+
+        with mock.patch.object(switch, 'ROOT', root), \
+             mock.patch.object(switch.subprocess, 'run', side_effect=fake_curl), \
+             mock.patch.object(switch.time, 'sleep'):
+            switch.verify_local_https(addresses=['127.0.0.1'], retry_seconds=1)
+        self.assertEqual(calls.count('/'), 2)
+        self.assertIn('/assets/mark.png', calls)
+
+    def test_https_check_reports_curl_error_and_uses_ipv6(self):
+        root = Path(self.temp.name)
+        (root / 'dist/assets').mkdir(parents=True)
+        for filename in ['index.html', 'school.html', 'team.html', 'assets/mark.png']:
+            (root / 'dist' / filename).write_bytes(b'expected')
+
+        def fake_curl(command, **kwargs):
+            self.assertIn(f'{switch.DOMAIN}:443:[::1]', command)
+            return mock.Mock(returncode=60, stdout=b'000', stderr=b'curl: (60) SSL certificate problem')
+
+        with mock.patch.object(switch, 'ROOT', root), \
+             mock.patch.object(switch.subprocess, 'run', side_effect=fake_curl):
+            with self.assertRaisesRegex(switch.ConfigError, 'SSL certificate problem'):
+                switch.verify_local_https(addresses=['::1'], retry_seconds=0)
+
+    def test_https_check_reports_unexpected_page_title(self):
+        root = Path(self.temp.name)
+        (root / 'dist/assets').mkdir(parents=True)
+        for filename in ['index.html', 'school.html', 'team.html', 'assets/mark.png']:
+            (root / 'dist' / filename).write_bytes(b'expected')
+
+        def fake_curl(command, **kwargs):
+            Path(command[command.index('--output') + 1]).write_bytes('<title>Премия ФВЛС</title>'.encode())
+            return mock.Mock(returncode=0, stdout=b'200', stderr=b'')
+
+        with mock.patch.object(switch, 'ROOT', root), \
+             mock.patch.object(switch.subprocess, 'run', side_effect=fake_curl):
+            with self.assertRaisesRegex(switch.ConfigError, 'Премия ФВЛС'):
+                switch.verify_local_https(addresses=['127.0.0.1'], retry_seconds=0)
 
 
 if __name__ == '__main__':

@@ -56,7 +56,7 @@ FVLS_TMP="$(mktemp)"
 trap 'rm -f "$FVLS_TMP"' EXIT
 FVLS_READY=0
 for fvls_attempt in {1..30}; do
-  if curl --noproxy '*' -fsS --max-time 2 "http://127.0.0.1:$FVLS_PORT/" -o "$FVLS_TMP" && cmp -s "$FVLS_TMP" "$FVLS_ROOT/dist/index.html"; then
+  if curl --noproxy '*' -fs --max-time 2 "http://127.0.0.1:$FVLS_PORT/" -o "$FVLS_TMP" && cmp -s "$FVLS_TMP" "$FVLS_ROOT/dist/index.html"; then
     FVLS_READY=1
     break
   fi

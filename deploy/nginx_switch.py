@@ -11,8 +11,10 @@ import os
 from pathlib import Path
 import re
 import shutil
+import socket
 import subprocess
 import tempfile
+import time
 
 
 DOMAIN = 'fvls.mywavewake.ru'
@@ -286,12 +288,56 @@ def rollback():
     print('Предыдущий маршрут nginx восстановлен.')
 
 
-def verify_local_https():
-    for url_path, filename in [('/', 'index.html'), ('/school', 'school.html'), ('/team.html', 'team.html'), ('/assets/mark.png', 'assets/mark.png')]:
-        command = ['curl', '--noproxy', '*', '--resolve', f'{DOMAIN}:443:127.0.0.1', '-fsS', '--max-time', '10', f'https://{DOMAIN}{url_path}']
-        result = subprocess.run(command, capture_output=True, check=False)
-        if result.returncode or result.stdout != (ROOT / 'dist' / filename).read_bytes():
-            raise ConfigError(f'Локальная HTTPS-проверка {url_path} не прошла')
+def verification_addresses():
+    addresses = ['127.0.0.1', '::1']
+    try:
+        for entry in socket.getaddrinfo(DOMAIN, 443, type=socket.SOCK_STREAM):
+            address = entry[4][0]
+            if address not in addresses and '%' not in address:
+                addresses.append(address)
+    except OSError:
+        pass
+    return addresses[:6]
+
+
+def verify_local_https(addresses=None, https_port=443, retry_seconds=15):
+    """Check the exact release over TLS, allowing nginx workers time to reload."""
+    addresses = verification_addresses() if addresses is None else addresses
+    paths = [('/', 'index.html'), ('/school', 'school.html'), ('/team.html', 'team.html'), ('/assets/mark.png', 'assets/mark.png')]
+    expected = {url_path: (ROOT / 'dist' / filename).read_bytes() for url_path, filename in paths}
+    deadline = time.monotonic() + retry_seconds
+    errors = {}
+    with tempfile.TemporaryDirectory(prefix='fvls-https-check-') as directory:
+        output = Path(directory) / 'response'
+        while True:
+            for address in addresses:
+                if errors and time.monotonic() > deadline:
+                    break
+                endpoint = f'[{address}]' if ':' in address else address
+                for url_path, _ in paths:
+                    command = ['curl', '--noproxy', '*', '--resolve', f'{DOMAIN}:{https_port}:{endpoint}',
+                               '-fsS', '--connect-timeout', '2', '--max-time', '3', '--output', str(output),
+                               '--write-out', '%{http_code}', f'https://{DOMAIN}:{https_port}{url_path}']
+                    result = subprocess.run(command, capture_output=True, check=False)
+                    status = result.stdout.decode('ascii', errors='replace').strip() or '000'
+                    if result.returncode:
+                        detail = result.stderr.decode('utf-8', errors='replace').strip().replace('\n', ' ')[:200]
+                        errors[address] = f'{url_path}: HTTP {status}, {detail or "curl завершился с ошибкой"}'
+                        break
+                    body = output.read_bytes()
+                    if status != '200' or body != expected[url_path]:
+                        title = re.search(rb'<title[^>]*>([^<]{0,120})</title>', body, re.IGNORECASE)
+                        page = title.group(1).decode('utf-8', errors='replace').strip() if title else 'без заголовка'
+                        page = re.sub(r'\s+', ' ', page)[:80]
+                        errors[address] = f'{url_path}: HTTP {status}, получена другая страница ({page})'
+                        break
+                else:
+                    return
+            if time.monotonic() >= deadline:
+                break
+            time.sleep(min(.75, max(0, deadline - time.monotonic())))
+    detail = '; '.join(f'{address}: {message}' for address, message in errors.items())
+    raise ConfigError(f'HTTPS-проверка не прошла. {detail or "Нет адресов для проверки"}')
 
 
 def main():
