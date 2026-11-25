@@ -1,69 +1,44 @@
 # ФВЛС Москвы
 
-Готовый к переносу срез сайта. Версия Sites 39 собрана из коммита `6033e3e9e9a1e2a55e07e0d5dae269eba2e1a519`. В `dist/` находятся страницы, стили, скрипты, скачиваемые материалы и интерактивная иллюстрация пути спортсмена. В разделе FVLSchool ссылка ведёт на пример кабинета на сайте до выхода публичной версии приложения. Страница `team.html` обозначает основной состав и резерв до подтверждения имён и фотографий.
+Статический сайт ФВЛС Москвы, подготовленный для `fvls.mywavewake.ru`. Содержимое `dist/` соответствует версии Sites 39 и коммиту `6033e3e9e9a1e2a55e07e0d5dae269eba2e1a519` исходного проекта. Состав сборной и резерв пока обозначены без персональных данных и фотографий.
 
-## GitHub
+## Развёртывание на сервере
 
-Рабочая копия подготовлена на ветке `main`. В `origin` настроен целевой репозиторий, публичный и пустой на момент подготовки. [YaroslavValeev/MoscowFederationVLS](https://github.com/YaroslavValeev/MoscowFederationVLS)
-
-При переносе из архива создайте локальную ветку и добавьте адрес репозитория.
+На сервере Ubuntu с действующим Nginx и HTTPS-виртуальным хостом `fvls.mywavewake.ru`:
 
 ```sh
-git init -b main
-git add .
-git commit -m "Import the Moscow Federation website"
-git remote add origin https://github.com/YaroslavValeev/MoscowFederationVLS.git
+sudo git clone https://github.com/YaroslavValeev/MoscowFederationVLS.git /opt/fvls-moskva
+sudo bash /opt/fvls-moskva/deploy/deploy.sh
 ```
 
-Загрузите ветку в GitHub при начале переноса. Команда публикует содержимое в открытом репозитории.
+Скрипт проверяет существующий HTTPS-виртуальный хост, собирает контейнер, проверяет страницы и только затем переключает `location /`. Контейнер слушает `127.0.0.1:18765`; порт 8080 и другие приложения не изменяются. Текущая конфигурация виртуального хоста сохраняется в `/var/backups/fvls-moskva/`. Перед перезагрузкой Nginx выполняется `nginx -t`, а после неё — локальная HTTPS-проверка. При ошибке конфигурация восстанавливается.
+
+Автоматическое переключение выполняется, только если найден один отдельный HTTPS-виртуальный хост для этого домена с единственным `location /` и без дополнительных маршрутов, кроме ACME. Если конфигурация сложнее, скрипт останавливается до изменения Nginx, чтобы не затронуть другие сайты. Docker или Docker Compose на Ubuntu устанавливаются только при отсутствии соответствующей программы.
+
+Проверка после запуска:
 
 ```sh
-git push -u origin main
+curl -fsSI https://fvls.mywavewake.ru/
+curl -fsSI https://fvls.mywavewake.ru/school
+curl -fsSI https://fvls.mywavewake.ru/team.html
 ```
 
-## Предварительный запуск
-
-Контейнер отдаёт `dist/` через Nginx на порту 8080. Маршруты `/`, `/school` и `/school.html` открывают страницы сайта. Конфигурация — в [deploy/nginx.conf](deploy/nginx.conf).
+## Откат маршрута
 
 ```sh
-docker build -t fvls-moskva:release .
-docker run -d --rm --name fvls-moskva-preview -p 127.0.0.1::8080 fvls-moskva:release
-fvls_preview_address="$(docker port fvls-moskva-preview 8080/tcp)"
-curl -fsSI "http://$fvls_preview_address/"
-curl -fsSI "http://$fvls_preview_address/school"
-curl -fsSI "http://$fvls_preview_address/team.html"
+sudo python3 /opt/fvls-moskva/deploy/nginx_switch.py --rollback
 ```
 
-В браузере проверьте инфографику «Путь спортсмена», переходы к дисциплинам, три колонки пути, запись в клуб и скачивание документов ЕВСК и DOCX.
+Откат проверяет, что конфигурация после переключения не изменялась, восстанавливает её из резервной копии и перезагружает Nginx после проверки. Контейнеры и данные других приложений не удаляются.
 
-## Развёртывание на `fvls.mywavewake.ru`
+## Локальная проверка
 
-К 24 ноября 2026 года этот адрес обслуживает отдельный сайт «Премия ФВЛС». Переключение нужно выполнять как осознанную замену текущего маршрута после сохранения его конфигурации и проверки контейнера ниже.
+```sh
+python3 -m unittest discover -s deploy/tests -v
+docker compose up -d --build
+curl -fsSI http://127.0.0.1:18765/
+curl -fsSI http://127.0.0.1:18765/school
+curl -fsSI http://127.0.0.1:18765/team.html
+```
 
-1. Скопируйте настройки порта и поднимите контейнер.
-
-   ```sh
-   cp .env.example .env
-   docker compose up -d --build
-   curl -fsSI http://127.0.0.1:8080/
-   curl -fsSI http://127.0.0.1:8080/school
-   curl -fsSI http://127.0.0.1:8080/team.html
-   ```
-
-2. Сохраните текущий виртуальный хост премии. В его HTTPS-виртуальном хосте замените маршрут `/` содержимым [deploy/fvls.mywavewake.ru.location.conf.example](deploy/fvls.mywavewake.ru.location.conf.example). Файл сохраняет TLS и заголовки на существующем прокси, а сайт работает во внутреннем контейнере.
-
-3. Проверьте конфигурацию и плавно примените её.
-
-   ```sh
-   nginx -t
-   systemctl reload nginx
-   curl -fsSI https://fvls.mywavewake.ru/
-   curl -fsSI https://fvls.mywavewake.ru/school
-   curl -fsSI https://fvls.mywavewake.ru/team.html
-   ```
-
-4. Откройте главную страницу, `/school`, документы в `assets/documents/` и иллюстрацию в разделе `#athlete-path`. Проверьте увеличение и переходы по интерактивным областям схемы.
-
-`docker-compose.yml` уже ограничивает порт хостом `127.0.0.1`. Для другого свободного локального порта измените только `FVLS_PORT` в `.env` и тот же номер в конфигурации прокси.
-
-Для отката верните сохранённый маршрут премии в виртуальный хост и выполните `nginx -t`, затем `systemctl reload nginx`. Данные и DNS-запись домена при этом не меняются.
+При самостоятельном использовании Compose адрес и порт можно задать в `.env`; пример находится в `.env.example`. Серверный `deploy.sh` намеренно использует только локальный адрес и порт 18765.
